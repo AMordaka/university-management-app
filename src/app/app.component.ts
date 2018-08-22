@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {UiService} from './services/ui/ui.service';
 
 @Component({
   selector: 'app-root',
@@ -7,25 +6,5 @@ import {UiService} from './services/ui/ui.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ManagementFront';
-  showMenu = false;
-  darkModeActive: boolean;
-
-  constructor(public ui: UiService) {
-
-  }
-
-  ngOnInit() {
-    this.ui.darkModeState.subscribe((value) => {
-      this.darkModeActive = value;
-    });
-  }
-
-  toggleMenu() {
-    this.showMenu = !this.showMenu;
-  }
-
-  modeToggleSwitch() {
-    this.ui.darkModeState.next(!this.darkModeActive);
-  }
+  title = 'app';
 }
