@@ -17,10 +17,6 @@ export class UserService {
     return this.http.get<User[]>(`/users`);
   }
 
-  getByUsername(username number) {
-    return this.http.get(`${this.API_URL}/user/` + username);
-  }
-
   register(user: User) {
     return this.http.post(`${this.API_URL}/api/auth/signup`, user);
   }
