@@ -56,12 +56,12 @@ export class RegisterComponent implements OnInit {
       .pipe(first())
       .subscribe(
         data => {
-		  console.log(data.message);
+		  console.log(data);
           this.alertService.success('Registration successful', true);
           this.router.navigate(['/login']);
         },
         error => {
-		  console.log(error.message);
+		  console.log(error);
           this.alertService.error(error);
           this.loading = false;
         });
