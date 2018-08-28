@@ -7,6 +7,9 @@ import {User} from '../models/user';
   providedIn: 'root'
 })
 export class UserService {
+
+  API_URL  =  'http://university-management-app-back.herokuapp.com';
+
   constructor(private http: HttpClient) {
   }
 
@@ -14,12 +17,12 @@ export class UserService {
     return this.http.get<User[]>(`/users`);
   }
 
-  getById(id: number) {
-    return this.http.get(`/users/` + id);
+  getByUsername(username number) {
+    return this.http.get(`${this.API_URL}/user/` + username);
   }
 
   register(user: User) {
-    return this.http.post(`/users/register`, user);
+    return this.http.post(`${this.API_URL}/api/auth/signup`, user);
   }
 
   update(user: User) {
