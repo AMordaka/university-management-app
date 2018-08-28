@@ -6,11 +6,14 @@ import {map} from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthenticationService {
+  
+  API_URL  =  'http://university-management-app-back.herokuapp.com';
+
   constructor(private http: HttpClient) {
   }
 
   login(username: string, password: string) {
-    return this.http.post<any>(`/users/authenticate`, {username: username, password: password})
+    return this.http.post<any>(`${this.API_URL}/api/auth/signin`, {username: username, password: password})
       .pipe(map(user => {
         // login successful if there's a jwt token in the response
         if (user && user.token) {
