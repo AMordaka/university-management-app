@@ -19,7 +19,7 @@ export class UserService {
   }
 
   register(user: User) {
-    return this.http.post(`${this.API_URL}/api/auth/signup`, user).pipe(map((response: Response) => response.json()));
+    return this.http.post(`${this.API_URL}/api/auth/signup`, user);
   }
 
   update(user: User) {
