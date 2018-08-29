@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import { Router, ActivatedRoute } from '@angular/router';
+import {Router, ActivatedRoute} from '@angular/router';
 import {AuthenticationService} from '../services/authentication.service';
 import {AlertService} from '../services/alert.service';
 import {first} from 'rxjs/operators';
@@ -22,7 +22,8 @@ export class LoginComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private authenticationService: AuthenticationService,
-    private alertService: AlertService) {}
+    private alertService: AlertService) {
+  }
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
@@ -35,12 +36,12 @@ export class LoginComponent implements OnInit {
   }
 
   // convenience getter for easy access to form fields
-  get f() { return this.loginForm.controls; }
+  get f() {
+    return this.loginForm.controls;
+  }
 
   onSubmit() {
     this.submitted = true;
-
-    // stop here if form is invalid
     if (this.loginForm.invalid) {
       return;
     }
@@ -52,7 +53,6 @@ export class LoginComponent implements OnInit {
         data => {
           this.router.navigate([this.returnUrl]);
         },
-        error => {
         error => {
           this.alertService.error(error);
           this.loading = false;

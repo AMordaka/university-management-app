@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import { map } from 'rxjs/operators';
+import {map} from 'rxjs/operators';
 
 import {User} from '../models/user';
 
@@ -9,7 +9,7 @@ import {User} from '../models/user';
 })
 export class UserService {
 
-  API_URL  =  'http://university-management-app-back.herokuapp.com';
+  API_URL = 'http://university-management-app-back.herokuapp.com';
 
   constructor(private http: HttpClient) {
   }
