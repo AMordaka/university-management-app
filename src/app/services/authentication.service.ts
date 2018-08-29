@@ -13,7 +13,12 @@ export class AuthenticationService {
   }
 
   login(username: string, password: string) {
-    return this.http.post(`${this.API_URL}/api/auth/signin`, {usernameOrEmail: username, password: password});
+    return this.http.post(`${this.API_URL}/api/auth/signin`, {usernameOrEmail: username, password: password}).pipe(map(user => {
+        if (user && user.accessToken) {
+          localStorage.setItem('currentUser', JSON.stringify(user));
+        }
+        return user;
+      }));
   }
 
   logout() {
