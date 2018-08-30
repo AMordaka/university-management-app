@@ -15,6 +15,7 @@ import {HomeComponent} from './home/home.component';
 import {AuthGuard} from './guards/auth.guard';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
+import { AlertComponent } from './directives/alert/alert.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ContactComponent } from './contact/contact.component';
     LoginComponent,
     HomeComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,
