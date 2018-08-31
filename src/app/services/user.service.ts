@@ -15,7 +15,7 @@ export class UserService {
   }
 
   getAll() {
-    return this.http.get<User[]>(`/users`);
+    return this.http.get<any[]>(`${this.API_URL}/users`).pipe(map(data => data));
   }
 
   register(user: User) {
