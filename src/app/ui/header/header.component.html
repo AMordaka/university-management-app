@@ -13,11 +13,12 @@
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
            aria-expanded="false">Account</a>
         <div class="dropdown-menu">
-          <a *ngIf="!(isLoggedIn$ | async)" class="dropdown-item" href="/login">Login</a>
-          <a *ngIf="!(isLoggedIn$ | async)" class="dropdown-item" href="/register">Register </a>
+          <a *ngIf="!(isLoggedIn$ | async)" class="dropdown-item" href="/login">Sign in</a>
+          <a *ngIf="!(isLoggedIn$ | async)" class="dropdown-item" href="/register">Sign up</a>
+          <a *ngIf="(isLoggedIn$ | async)" class="dropdown-item" href="/user-list">User List</a>
           <div *ngIf="isLoggedIn$ | async as isLoggedIn">
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" (click)="onLogout()">Logout</a>
+            <a class="dropdown-item" id="custom_button" (click)="onLogout()" >Logout</a>
           </div>
         </div>
       </li>
