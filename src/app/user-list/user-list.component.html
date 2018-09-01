@@ -1,38 +1,49 @@
-
 <h1>List of Users</h1>
 <div *ngIf="undefined !== data">
- <table class="table table-striped" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="5">
-  <thead>
-  <tr>
+  <table class="table table-striped" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="5">
+    <thead>
+    <tr>
+      <th style="width: 5%">
+        <mfDefaultSorter by="id">ID</mfDefaultSorter>
+      </th>
+      <th style="width: 15%">
+        <mfDefaultSorter by="username">Index</mfDefaultSorter>
+      </th>
+      <th style="width: 15%">
+        <mfDefaultSorter by="surname">Surname</mfDefaultSorter>
+      </th>
+      <th style="width: 15%">
+        <mfDefaultSorter by="name">Last Name</mfDefaultSorter>
+      </th>
+      <th style="width: 15%">
+        <mfDefaultSorter by="email">E-mail</mfDefaultSorter>
+      </th>
       <th style="width: 20%">
-          <mfDefaultSorter by="id">ID</mfDefaultSorter>
+        <mfDefaultSorter by="joinedAt">Created</mfDefaultSorter>
       </th>
-      <th style="width: 50%">
-          <mfDefaultSorter by="name">Name</mfDefaultSorter>
+      <th style="width: 25%">
+        Roles
       </th>
-      <th style="width: 10%">
-          <mfDefaultSorter by="surname">Index</mfDefaultSorter>
-      </th>
-      <th style="width: 20%">
-          <mfDefaultSorter by="joinedAt">JoinedAt</mfDefaultSorter>
-      </th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let user of mf.data">
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let user of mf.data">
       <td>{{user.id}}</td>
-      <td>{{user.name}}</td>
       <td>{{user.username}}</td>
+      <td>{{user.surname}}</td>
+      <td>{{user.name}}</td>
+      <td>{{user.email}}</td>
       <td>{{user.joinedAt | date:'dd-MM-yyyy HH:mm'}}</td>
-  </tr>
-  </tbody>
-  <tfoot>
-  <tr>
+      <td>{{user.roles[0].name}}</td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
       <td colspan="4">
-          <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>
+        <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>
       </td>
-  </tr>
-  </tfoot>
-</table>
+    </tr>
+    </tfoot>
+  </table>
 
 </div>

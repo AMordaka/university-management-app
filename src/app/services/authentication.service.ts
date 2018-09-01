@@ -9,7 +9,7 @@ import {BehaviorSubject} from 'rxjs';
 export class AuthenticationService {
 
   private loggedIn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-  API_URL = 'http://university-management-app-back.herokuapp.com';
+  API_URL = 'https://university-management-app-back.herokuapp.com';
 
   constructor(private http: HttpClient) {
   }

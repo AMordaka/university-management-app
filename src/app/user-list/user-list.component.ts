@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {UserService} from '../services/user.service';
 
 @Component({
@@ -8,20 +8,21 @@ import {UserService} from '../services/user.service';
 })
 export class UserListComponent implements OnInit {
 
-  public data:any;
+  public data: any;
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService) {
+  }
 
   ngOnInit() {
-  	this.getListUsers();
+    this.getListUsers();
   }
 
   getListUsers() {
-  this.userService.getAll().subscribe(
-        restItems => {
-          this.data = restItems;
-        }
-      );
+    this.userService.getAll().subscribe(
+      restItems => {
+        this.data = restItems;
+      }
+    );
   }
 
 }
