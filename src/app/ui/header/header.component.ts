@@ -11,6 +11,9 @@ import {Router, ActivatedRoute} from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
+  isAdminIn$: Observable<boolean>;
+  isTeacherIn$: Observable<boolean>;
+  isStudentIn$: Observable<boolean>;
   isLoggedIn$: Observable<boolean>;
 
   constructor(private authenticationService: AuthenticationService,private alertService: AlertService, private router: Router) {
@@ -18,6 +21,9 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.isLoggedIn$ = this.authenticationService.isLoggedIn();
+    this.isAdminIn$ = this.authenticationService.isAdminIn();
+    this.isTeacherIn$ = this.authenticationService.isTeacherIn();
+    this.isStudentIn$ = this.authenticationService.isStudentIn();
   }
 
   onLogout() {
