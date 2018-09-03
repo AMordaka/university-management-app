@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {AuthenticationService} from '../../services/authentication.service';
 import {AlertService} from '../../services/alert.service';
 import {Observable} from 'rxjs';
+import {Router, ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -12,15 +13,16 @@ export class HeaderComponent implements OnInit {
 
   isLoggedIn$: Observable<boolean>;
 
-  constructor(private authenticationService: AuthenticationService,private alertService: AlertService) {
+  constructor(private authenticationService: AuthenticationService,private alertService: AlertService, private router: Router) {
   }
 
   ngOnInit() {
-    this.isLoggedIn$ = this.authenticationService.isLoggedIn;
+    this.isLoggedIn$ = this.authenticationService.isLoggedIn();
   }
 
   onLogout() {
     this.authenticationService.logout();
+    this.router.navigate(['/home']);
     this.alertService.success('Logout Successfully');
   }
 
