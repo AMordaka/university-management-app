@@ -6,22 +6,22 @@
       <th style="width: 5%">
         <mfDefaultSorter by="id">ID</mfDefaultSorter>
       </th>
-      <th style="width: 15%">
+      <th style="width: 10%">
         <mfDefaultSorter by="username">Index</mfDefaultSorter>
       </th>
-      <th style="width: 15%">
+      <th style="width: 10%">
         <mfDefaultSorter by="surname">Surname</mfDefaultSorter>
       </th>
-      <th style="width: 15%">
+      <th style="width: 10%">
         <mfDefaultSorter by="name">Last Name</mfDefaultSorter>
       </th>
       <th style="width: 15%">
         <mfDefaultSorter by="email">E-mail</mfDefaultSorter>
       </th>
-      <th style="width: 20%">
+      <th style="width: 15%">
         <mfDefaultSorter by="joinedAt">Created</mfDefaultSorter>
       </th>
-      <th style="width: 25%">
+      <th style="width: 45%">
         Roles
       </th>
     </tr>
@@ -34,7 +34,7 @@
       <td>{{user.name}}</td>
       <td>{{user.email}}</td>
       <td>{{user.joinedAt | date:'dd-MM-yyyy HH:mm'}}</td>
-      <td>{{user.roles[0].name}}</td>
+      <td *ngFor="let roles of user.roles">{{roles.name}}</td>
     </tr>
     </tbody>
     <tfoot>
