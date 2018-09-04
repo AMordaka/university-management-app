@@ -22,6 +22,10 @@ export class UserService {
     return this.http.post(`${this.API_URL}/api/auth/signup`, user);
   }
 
+  getUser(username: string) {
+    return this.http.get(`${this.API_URL}/user/` + username);
+  }
+
   update(user: User) {
     return this.http.put(`/users/` + user.id, user);
   }

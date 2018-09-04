@@ -1,6 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {Component, Input, OnInit} from '@angular/core';
+import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {User} from '../models/user';
 
 
 @Component({
@@ -10,24 +11,50 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 })
 export class ModalComponent implements OnInit {
 
-  loginForm: FormGroup;
+  editForm: FormGroup;
 
+  loading = false;
+  submitted = false;
 
-  constructor(private modalService: NgbModal, private formBuilder: FormBuilder) {
+  @Input() user: User;
+
+  constructor(public activeModal: NgbActiveModal, private formBuilder: FormBuilder) {
   }
 
-  ngOnInit() {
-    this.loginForm = this.formBuilder.group({
-      username: ['', Validators.required],
-      password: ['', Validators.required]
+  ngOnInit(): void {
+    this.editForm = this.formBuilder.group({
+      name: ['', Validators.required],
+      surname: ['', Validators.required],
+      username: ['', [Validators.required, Validators.minLength(6)]],
+      street: ['', Validators.required],
+      numberStreet: ['', Validators.required],
+      postalCode: ['', Validators.required],
+      city: ['', Validators.required],
+      email: ['', Validators.required],
+      password: ['', [Validators.required, Validators.minLength(6)]]
     });
   }
 
-  open(content) {
-    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'});
+  onSubmit() {
+    this.submitted = true;
+    if (this.editForm.invalid) {
+      return;
+    }
+
+    console.log(this.editForm.value);
+    this.loading = true;
+    /*    this.userService.register(this.editForm.value)
+          .pipe(first())
+          .subscribe(
+            data => {
+              this.alertService.success('Updated successful', true);
+            },
+            error => {
+              console.log(error);
+              this.alertService.error(error.error.message);
+              this.loading = false;
+            });*/
   }
 
-  onSubmit() {
-    console.log(this.loginForm.controls.username.value);
-  }
+
 }
