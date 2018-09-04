@@ -1,8 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {map} from 'rxjs/operators';
-import { of } from "rxjs";
-import { BehaviorSubject } from 'rxjs';
+import {BehaviorSubject} from 'rxjs';
 import {UserPrincipal} from '../models/userPrincipal';
 
 @Injectable({
@@ -25,64 +24,64 @@ export class AuthenticationService {
   isLoggedIn() {
     if (localStorage.getItem('currentUser')) {
       this.isLogged.next(true);
-      return this.isLogged.asObservable(); 
+      return this.isLogged.asObservable();
     }
-     this.isLogged.next(false);
-     return this.isLogged.asObservable();
+    this.isLogged.next(false);
+    return this.isLogged.asObservable();
   }
 
-  isAdminIn(){
+  isAdminIn() {
     if (localStorage.getItem('currentUser')) {
       this.user = JSON.parse(localStorage.getItem('currentUser'));
-        this.user.roles.forEach(role => {
-          if(role.id == 1){
-            this.isAdmin.next(true);
-          }
-          if(role.id == 2){
-            this.isTeacher.next(true);
-          }
-          if(role.id == 3){
-            this.isStudent.next(true);
-          }
-        });
+      this.user.roles.forEach(role => {
+        if (role.id === 1) {
+          this.isAdmin.next(true);
+        }
+        if (role.id === 2) {
+          this.isTeacher.next(true);
+        }
+        if (role.id === 3) {
+          this.isStudent.next(true);
+        }
+      });
     }
-   return this.isAdmin.asObservable();
+    return this.isAdmin.asObservable();
   }
 
-  isTeacherIn(){
+  isTeacherIn() {
     if (localStorage.getItem('currentUser')) {
-        this.user = JSON.parse(localStorage.getItem('currentUser'));
-          this.user.roles.forEach(role => {
-            if(role.id == 1){
-              this.isAdmin.next(true);
-            }
-            if(role.id == 2){
-              this.isTeacher.next(true);
-            }
-            if(role.id == 3){
-              this.isStudent.next(true);
-            }
-          });
-      }
-   return this.isTeacher.asObservable();
+      this.user = JSON.parse(localStorage.getItem('currentUser'));
+      this.user.roles.forEach(role => {
+        if (role.id === 1) {
+          this.isAdmin.next(true);
+        }
+        if (role.id === 2) {
+          this.isTeacher.next(true);
+        }
+        if (role.id === 3) {
+          this.isStudent.next(true);
+        }
+      });
+    }
+    return this.isTeacher.asObservable();
   }
 
-  isStudentIn(){
+  isStudentIn() {
     if (localStorage.getItem('currentUser')) {
-        this.user = JSON.parse(localStorage.getItem('currentUser'));
-          this.user.roles.forEach(role => {
-            if(role.id == 1){
-              this.isAdmin.next(true);
-            }
-            if(role.id == 2){
-              this.isTeacher.next(true);
-            }
-            if(role.id == 3){
-              this.isStudent.next(true);
-            }
-          });
-      }
-   return this.isStudent.asObservable();
+      this.user = JSON.parse(localStorage.getItem('currentUser'));
+      this.user.roles.forEach(role => {
+        if (role.id === 1) {
+          this.isAdmin.next(true);
+        }
+        if (role.id === 2) {
+          this.isTeacher.next(true);
+        }
+        if (role.id === 3) {
+          this.isStudent.next(true);
+        }
+      });
+    }
+    return this.isStudent.asObservable();
   }
 
   login(username: string, password: string) {
@@ -91,13 +90,13 @@ export class AuthenticationService {
         localStorage.setItem('currentUser', JSON.stringify(user));
         this.user = JSON.parse(localStorage.getItem('currentUser'));
         this.user.roles.forEach(role => {
-          if(role.id == 1){
+          if (role.id === 1) {
             this.isAdmin.next(true);
           }
-          if(role.id == 2){
+          if (role.id === 2) {
             this.isTeacher.next(true);
           }
-          if(role.id == 3){
+          if (role.id === 3) {
             this.isStudent.next(true);
           }
         });
