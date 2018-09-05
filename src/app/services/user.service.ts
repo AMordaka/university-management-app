@@ -26,6 +26,14 @@ export class UserService {
     return this.http.get(`${this.API_URL}/user/` + username);
   }
 
+  getStudentItems(username: string) {
+    return this.http.get(`${this.API_URL}/student/` + username + `/items`);
+  }
+
+  getTeacherItems(username: string) {
+    return this.http.get(`${this.API_URL}/teacher/` + username + `/items`);
+  }
+
   update(user: User) {
     return this.http.put(`/users/` + user.id, user);
   }
