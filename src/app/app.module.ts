@@ -18,6 +18,7 @@ import {ContactComponent} from './contact/contact.component';
 import {AlertComponent} from './directives/alert/alert.component';
 import {UserListComponent} from './user-list/user-list.component';
 import {AdminGuard} from './guards/admin.guard';
+import { ItemListComponent } from './item-list/item-list.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import {AdminGuard} from './guards/admin.guard';
     ContactComponent,
     AlertComponent,
     UserListComponent,
-    ModalComponent
+    ModalComponent,
+    ItemListComponent
   ],
   entryComponents: [ModalComponent],
   imports: [

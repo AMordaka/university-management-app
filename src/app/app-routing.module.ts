@@ -7,6 +7,7 @@ import {AuthGuard} from './guards/auth.guard';
 import {AboutComponent} from './about/about.component';
 import {ContactComponent} from './contact/contact.component';
 import {UserListComponent} from './user-list/user-list.component';
+import {ItemListComponent} from './item-list/item-list.component';
 import {AdminGuard} from './guards/admin.guard';
 
 const routes: Routes = [
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'user-list', component: UserListComponent, canActivate: [AdminGuard]},
+  {path: 'item-list', component: ItemListComponent, canActivate: [AuthGuard]},
   {path: 'about', component: AboutComponent},
   {path: 'contact', component: ContactComponent},
 
