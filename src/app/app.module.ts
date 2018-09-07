@@ -19,6 +19,7 @@ import {AlertComponent} from './directives/alert/alert.component';
 import {UserListComponent} from './user-list/user-list.component';
 import {AdminGuard} from './guards/admin.guard';
 import { ItemListComponent } from './item-list/item-list.component';
+import { ModalRegisterComponent } from './modal-register/modal-register.component';
 
 @NgModule({
   declarations: [
@@ -31,9 +32,10 @@ import { ItemListComponent } from './item-list/item-list.component';
     AlertComponent,
     UserListComponent,
     ModalComponent,
-    ItemListComponent
+    ItemListComponent,
+    ModalRegisterComponent
   ],
-  entryComponents: [ModalComponent],
+  entryComponents: [ModalComponent, ModalRegisterComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

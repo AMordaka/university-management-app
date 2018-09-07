@@ -30,8 +30,7 @@ export class ModalComponent implements OnInit {
       numberStreet: ['', Validators.required],
       postalCode: ['', Validators.required],
       city: ['', Validators.required],
-      email: ['', Validators.required],
-      password: ['', [Validators.required, Validators.minLength(6)]]
+      email: ['', Validators.required]
     });
   }
 

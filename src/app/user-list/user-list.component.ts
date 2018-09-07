@@ -6,6 +6,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {first} from 'rxjs/operators';
 import {AlertService} from '../services/alert.service';
 import {ModalComponent} from '../modal/modal.component';
+import {ModalRegisterComponent} from '../modal-register/modal-register.component';
 
 @Component({
   selector: 'app-user-list',
@@ -31,9 +32,17 @@ export class UserListComponent implements OnInit {
     );
   }
 
+  deleteUser(id: number){
+    this.userService.delete(id);
+  }
+
   open(user: User) {
     const modalRef = this.modalService.open(ModalComponent);
     modalRef.componentInstance.user = user;
+  }
+
+  openRegisterModal(){
+    const modalRef = this.modalService.open(ModalRegisterComponent);
   }
 
 }

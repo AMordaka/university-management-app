@@ -16,13 +16,12 @@ export class ItemListComponent implements OnInit {
   constructor(private userService: UserService, private modalService: NgbModal, private authenticationService: AuthenticationService) { }
 
   ngOnInit() {
-  this.authenticationService.isTeacherIn().subscribe(value => this.isTeacher = value);
-  if(this.isTeacher === false){
-  	this.getUserItems();
-  } else{
-  	this.getTeacherItems();
-  }
-  
+    this.authenticationService.isTeacherIn().subscribe(value => this.isTeacher = value);
+    if(this.isTeacher === false){
+    	this.getUserItems();
+    } else{
+    	this.getTeacherItems();
+    }
   }
 
   getUserItems() {
