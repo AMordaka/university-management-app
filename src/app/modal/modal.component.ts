@@ -37,11 +37,9 @@ export class ModalComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
-    if (this.editForm.invalid) {
-      return;
-    }
 
     console.log(this.editForm.value);
+    console.log('sas');
     this.loading = true;
     /*    this.userService.register(this.editForm.value)
           .pipe(first())

@@ -113,4 +113,11 @@ export class AuthenticationService {
     this.isTeacher.next(false);
     this.isStudent.next(false);
   }
+
+  getUsername() {
+    if (localStorage.getItem('currentUser')) {
+      this.user = JSON.parse(localStorage.getItem('currentUser'));
+      return this.user.username;
+    }
+  }
 }

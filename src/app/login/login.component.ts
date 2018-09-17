@@ -50,9 +50,9 @@ export class LoginComponent implements OnInit {
     this.authenticationService.login(this.f.username.value, this.f.password.value)
       .pipe(first())
       .subscribe(
-        (data :any) => {
+        (data: any) => {
           this.router.navigate([this.returnUrl]);
-          this.alertService.success('Welcome: ' + data.name+ ' ' + data.surname);
+          this.alertService.success('Welcome: ' + data.name + ' ' + data.surname);
         },
         error => {
           this.alertService.error(error.statusText);

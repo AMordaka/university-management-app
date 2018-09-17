@@ -3,4 +3,5 @@ export class Item {
   subjectName: string;
   grade: string;
   name: string;
+  username: string;
 }
