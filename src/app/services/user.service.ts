@@ -22,6 +22,10 @@ export class UserService {
     return this.http.post(`${this.API_URL}/api/auth/signup`, user);
   }
 
+  registerTeacher(user: User) {
+    return this.http.post(`${this.API_URL}/api/auth/signupTeacher`, user);
+  }
+
   getUser(username: string) {
     return this.http.get(`${this.API_URL}/user/` + username);
   }
@@ -39,7 +43,7 @@ export class UserService {
   }
 
   delete(id: number) {
-    return this.http.delete(`/users/` + id);
+    return this.http.delete(`${this.API_URL}/user/` + id);
   }
 }
 

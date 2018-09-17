@@ -8,6 +8,7 @@ import {AboutComponent} from './about/about.component';
 import {ContactComponent} from './contact/contact.component';
 import {UserListComponent} from './user-list/user-list.component';
 import {ItemListComponent} from './item-list/item-list.component';
+import {UserProfileComponent} from './user-profile/user-profile.component';
 import {AdminGuard} from './guards/admin.guard';
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'user-list', component: UserListComponent, canActivate: [AdminGuard]},
   {path: 'item-list', component: ItemListComponent, canActivate: [AuthGuard]},
+  {path: 'profile', component: UserProfileComponent, canActivate: [AuthGuard]},
   {path: 'about', component: AboutComponent},
   {path: 'contact', component: ContactComponent},
 

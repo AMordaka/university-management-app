@@ -1,4 +1,7 @@
 <h1>List of Users</h1>
+<div>
+  <button class="btn-dark" (click)="openRegisterModal()">Add Teacher</button>
+</div>
 <div *ngIf="undefined !== data">
   <table class="table table-striped" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="5">
     <thead>
@@ -19,7 +22,7 @@
         <mfDefaultSorter by="email">E-mail</mfDefaultSorter>
       </th>
       <th style="width: 15%">
-        <mfDefaultSorter by="joinedAt">Created</mfDefaultSorter>
+        <mfDefaultSorter by="createdAt">Created</mfDefaultSorter>
       </th>
       <th style="width: 20%">
         Roles
@@ -36,11 +39,11 @@
       <td>{{user.surname}}</td>
       <td>{{user.name}}</td>
       <td>{{user.email}}</td>
-      <td>{{user.joinedAt | date:'dd-MM-yyyy HH:mm'}}</td>
+      <td>{{user.createdAt | date:'dd-MM-yyyy HH:mm'}}</td>
       <td *ngFor="let roles of user.roles">{{roles.name}}</td>
       <td>
         <button class="btn-dark" (click)="open(user)">EDIT</button>
-        <button class="btn-danger">DELETE</button>
+        <button class="btn-danger" (click)="deleteUser(user.id)">DELETE</button>
       </td>
     </tr>
     </tbody>
