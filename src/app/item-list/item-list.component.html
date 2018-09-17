@@ -5,14 +5,20 @@
       <th style="width: 10%">
         <mfDefaultSorter by="id">ID</mfDefaultSorter>
       </th>
-      <th style="width: 35%">
+      <th style="width: 25%">
         <mfDefaultSorter by="subjectName">Subject Name</mfDefaultSorter>
       </th>
-      <th style="width: 35%">
+      <th style="width: 25%">
         <mfDefaultSorter by="name">Person</mfDefaultSorter>
+      </th>
+      <th *ngIf="isTeacher" style="width: 10%">
+        <mfDefaultSorter by="name">Index</mfDefaultSorter>
       </th>
       <th style="width: 10%">
         <mfDefaultSorter by="grade">Grade</mfDefaultSorter>
+      </th>
+      <th *ngIf="isTeacher" style="width: 20%">
+        <mfDefaultSorter by="grade">Options</mfDefaultSorter>
       </th>
     </tr>
     </thead>
@@ -21,7 +27,12 @@
       <td>{{item.id}}</td>
       <td>{{item.subjectName}}</td>
       <td>{{item.name}}</td>
+      <td *ngIf="isTeacher">{{item.username}}</td>
       <td>{{item.grade}}</td>
+      <td *ngIf="isTeacher">
+        <button *ngIf="item.grade !== null" class="btn-secondary">EDIT</button>
+        <button *ngIf="item.grade === null" class="btn-info">PUT</button>
+      </td>
     </tr>
     </tbody>
     <tfoot>
