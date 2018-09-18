@@ -21,6 +21,7 @@ import {AdminGuard} from './guards/admin.guard';
 import { ItemListComponent } from './item-list/item-list.component';
 import { ModalRegisterComponent } from './modal-register/modal-register.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { MyProfileComponent } from './my-profile/my-profile.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     ModalComponent,
     ItemListComponent,
     ModalRegisterComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    MyProfileComponent
   ],
   entryComponents: [ModalComponent, ModalRegisterComponent],
   imports: [
