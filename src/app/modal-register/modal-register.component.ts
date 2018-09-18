@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {first} from 'rxjs/operators';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { first } from 'rxjs/operators';
 
-import {AlertService} from '../services/alert.service';
-import {UserService} from '../services/user.service';
+import { AlertService } from '../services/alert.service';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-modal-register',
@@ -18,11 +18,11 @@ export class ModalRegisterComponent implements OnInit {
   submitted = false;
 
   constructor(public activeModal: NgbActiveModal, private formBuilder: FormBuilder, private userService: UserService,
-    private alertService: AlertService) {
+              private alertService: AlertService) {
   }
 
   ngOnInit() {
-   this.registerForm = this.formBuilder.group({
+    this.registerForm = this.formBuilder.group({
       name: ['', Validators.required],
       surname: ['', Validators.required],
       username: ['', [Validators.required, Validators.minLength(6)]],

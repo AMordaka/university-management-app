@@ -1,10 +1,10 @@
-import {Component, OnInit} from '@angular/core';
-import {UserService} from '../services/user.service';
-import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
-import {User} from '../models/user';
-import {AlertService} from '../services/alert.service';
-import {ModalComponent} from '../modal/modal.component';
-import {ModalRegisterComponent} from '../modal-register/modal-register.component';
+import { Component, OnInit } from '@angular/core';
+import { UserService } from '../services/user.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { User } from '../models/user';
+import { AlertService } from '../services/alert.service';
+import { ModalComponent } from '../modal/modal.component';
+import { ModalRegisterComponent } from '../modal-register/modal-register.component';
 
 @Component({
   selector: 'app-user-list',
@@ -30,7 +30,7 @@ export class UserListComponent implements OnInit {
     );
   }
 
-  deleteUser(){
+  deleteUser() {
     console.log('delte');
   }
 
@@ -39,7 +39,7 @@ export class UserListComponent implements OnInit {
     modalRef.componentInstance.user = user;
   }
 
-  openRegisterModal(){
+  openRegisterModal() {
     const modalRef = this.modalService.open(ModalRegisterComponent);
   }
 

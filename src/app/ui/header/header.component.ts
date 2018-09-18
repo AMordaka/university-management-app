@@ -1,8 +1,8 @@
-import {Component, OnInit} from '@angular/core';
-import {AuthenticationService} from '../../services/authentication.service';
-import {AlertService} from '../../services/alert.service';
-import {Observable} from 'rxjs';
-import {Router, ActivatedRoute} from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from '../../services/authentication.service';
+import { AlertService } from '../../services/alert.service';
+import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -16,7 +16,7 @@ export class HeaderComponent implements OnInit {
   isStudentIn$: Observable<boolean>;
   isLoggedIn$: Observable<boolean>;
 
-  constructor(private authenticationService: AuthenticationService,private alertService: AlertService, private router: Router) {
+  constructor(private authenticationService: AuthenticationService, private alertService: AlertService, private router: Router) {
   }
 
   ngOnInit() {

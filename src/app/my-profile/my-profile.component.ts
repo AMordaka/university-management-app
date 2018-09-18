@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {UserService} from '../services/user.service';
-import {AuthenticationService} from '../services/authentication.service';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { UserService } from '../services/user.service';
+import { AuthenticationService } from '../services/authentication.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-my-profile',
@@ -13,7 +13,7 @@ export class MyProfileComponent implements OnInit {
   model: any = {};
   updateForm: FormGroup;
 
-  constructor(private userService: UserService, private authenticationService: AuthenticationService,private formBuilder: FormBuilder){
+  constructor(private userService: UserService, private authenticationService: AuthenticationService, private formBuilder: FormBuilder) {
   }
 
   ngOnInit() {
@@ -31,14 +31,14 @@ export class MyProfileComponent implements OnInit {
   }
 
   getUser() {
-  	this.userService.getUser(this.authenticationService.getUsername()).subscribe(
-	      restItems => {
-	        this.model = restItems;
-	      }
-	    );
+    this.userService.getUser(this.authenticationService.getUsername()).subscribe(
+      restItems => {
+        this.model = restItems;
+      }
+    );
   }
 
-	update(){
-		console.log(this.model);
-	}
+  update() {
+    console.log(this.model);
+  }
 }

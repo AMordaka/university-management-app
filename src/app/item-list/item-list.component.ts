@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {UserService} from '../services/user.service';
-import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
-import {AuthenticationService} from '../services/authentication.service';
+import { Component, OnInit } from '@angular/core';
+import { UserService } from '../services/user.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { AuthenticationService } from '../services/authentication.service';
 
 @Component({
   selector: 'app-item-list',

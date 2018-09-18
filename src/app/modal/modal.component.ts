@@ -1,7 +1,7 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {User} from '../models/user';
+import { Component, Input, OnInit } from '@angular/core';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { User } from '../models/user';
 
 
 @Component({
@@ -14,6 +14,8 @@ export class ModalComponent implements OnInit {
   editForm: FormGroup;
   loading = false;
   submitted = false;
+
+  @Input() user: User;
 
   constructor(public activeModal: NgbActiveModal, private formBuilder: FormBuilder) {
   }
