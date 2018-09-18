@@ -3,6 +3,7 @@ import {NgModule} from '@angular/core';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {ReactiveFormsModule} from '@angular/forms';
 
+import {FormsModule} from '@angular/forms';
 import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import {DataTableModule} from 'angular-6-datatable';
 import {AppRoutingModule} from './app-routing.module';
@@ -47,6 +48,7 @@ import { MyProfileComponent } from './my-profile/my-profile.component';
     DataTableModule,
     NgbModule.forRoot(),
     ReactiveFormsModule,
+    FormsModule,
     HttpClientModule,
   ],
   providers: [AuthGuard, AdminGuard],

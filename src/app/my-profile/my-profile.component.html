@@ -1,3 +1,85 @@
-<p>
-  my-profile works!
-</p>
+
+<div class="container">
+    <div *ngIf="undefined !== model">
+	<div class="row">
+		<div class="col-md-9">
+		    <div class="card">
+		        <div class="card-body">
+		            <div class="row">
+		                <div class="col-md-12">
+		                    <h4>Your Profile</h4>
+		                    <hr>
+		                </div>
+		            </div>
+                <form  (ngSubmit)="update()">
+		            <div class="row">
+		                <div class="col-md-12">
+                              <div class="form-group row">
+                                <label for="id" class="col-4 col-form-label">ID</label> 
+                                <div class="col-8">
+                                   <input id="id" name="id" [(ngModel)]="model.id" class="form-control here" readonly>
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <label for="username" class="col-4 col-form-label">Index</label> 
+                                <div class="col-8">
+                                   <input id="username" name="username" [(ngModel)]="model.username" class="form-control here" readonly>
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <label for="email" class="col-4 col-form-label">Email</label> 
+                                <div class="col-8">
+                                  <input  name="email" [(ngModel)]="model.email" class="form-control here" required="required" type="text">
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <label for="name" class="col-4 col-form-label">First Name</label> 
+                                <div class="col-8">
+                                  <input name="name" [(ngModel)]="model.name" class="form-control here" required="required" type="text">
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <label for="surname" class="col-4 col-form-label">Last Name</label> 
+                                <div class="col-8">
+                                  <input name="surname" [(ngModel)]="model.surname" class="form-control here" required="required" type="text">
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <label for="street" class="col-4 col-form-label">Street</label> 
+                                <div class="col-8">
+                                  <input  name="street" [(ngModel)]="model.street" class="form-control here" required="required" type="text">
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <label for="numberStreet" class="col-4 col-form-label">Number Street</label> 
+                                <div class="col-8">
+                                  <input  name="numberStreet" [(ngModel)]="model.numberStreet" required="required" class="form-control here" type="text">
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <label for="postalCode" class="col-4 col-form-label">Postal Code</label> 
+                                <div class="col-8">
+                                  <input name="postalCode" [(ngModel)]="model.postalCode" class="form-control here" required="required" type="text">
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <label for="city" class="col-4 col-form-label">City</label> 
+                                <div class="col-8">
+                                  <input name="city" [(ngModel)]="model.city" class="form-control here" required="required" type="text">
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <div class="offset-4 col-8">
+                                  <button name="submit" type="submit" class="btn btn-primary">Update My Profile</button>
+                                </div>
+                              </div>
+
+		                </div>
+		            </div>
+		            </form>
+		        </div>
+		    </div>
+		</div>
+  </div>
+	</div>
+</div>

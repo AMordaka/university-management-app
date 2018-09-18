@@ -35,7 +35,9 @@
     <tbody>
     <tr *ngFor="let user of mf.data">
       <td>{{user.id}}</td>
-      <td>{{user.username}}</td>
+      <div class="nondec">
+      <td><a routerLink="/profile/{{user.username}}">{{user.username}}</a></td>
+      </div>
       <td>{{user.surname}}</td>
       <td>{{user.name}}</td>
       <td>{{user.email}}</td>
@@ -56,9 +58,4 @@
     </tfoot>
   </table>
 </div>
-
-
-
-
-
-
+<router-outlet></router-outlet>

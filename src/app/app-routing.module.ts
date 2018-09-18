@@ -10,6 +10,7 @@ import {UserListComponent} from './user-list/user-list.component';
 import {ItemListComponent} from './item-list/item-list.component';
 import {UserProfileComponent} from './user-profile/user-profile.component';
 import {AdminGuard} from './guards/admin.guard';
+import { MyProfileComponent } from './my-profile/my-profile.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path: 'user-list', component: UserListComponent, canActivate: [AdminGuard]},
   {path: 'item-list', component: ItemListComponent, canActivate: [AuthGuard]},
   {path: 'profile/:username', component: UserProfileComponent, canActivate: [AuthGuard]},
+  {path: 'myprofile', component: MyProfileComponent, canActivate: [AuthGuard]},
   {path: 'about', component: AboutComponent},
   {path: 'contact', component: ContactComponent},
 

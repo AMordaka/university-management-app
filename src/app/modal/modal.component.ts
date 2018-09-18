@@ -12,11 +12,8 @@ import {User} from '../models/user';
 export class ModalComponent implements OnInit {
 
   editForm: FormGroup;
-
   loading = false;
   submitted = false;
-
-  @Input() user: User;
 
   constructor(public activeModal: NgbActiveModal, private formBuilder: FormBuilder) {
   }
@@ -26,19 +23,14 @@ export class ModalComponent implements OnInit {
       name: ['', Validators.required],
       surname: ['', Validators.required],
       username: ['', [Validators.required, Validators.minLength(6)]],
-      street: ['', Validators.required],
-      numberStreet: ['', Validators.required],
-      postalCode: ['', Validators.required],
-      city: ['', Validators.required],
       email: ['', Validators.required]
     });
   }
 
+
   onSubmit() {
     this.submitted = true;
-
     console.log(this.editForm.value);
-    console.log('sas');
     this.loading = true;
     /*    this.userService.register(this.editForm.value)
           .pipe(first())

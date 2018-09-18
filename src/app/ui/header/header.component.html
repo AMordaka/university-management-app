@@ -16,7 +16,7 @@
           <a *ngIf="!(isLoggedIn$ | async)" class="dropdown-item" href="/login">Sign in</a>
           <a *ngIf="!(isLoggedIn$ | async)" class="dropdown-item" href="/register">Sign up</a>
           <div *ngIf="isLoggedIn$ | async">
-            <a class="dropdown-item" href="/profile">Profile</a>
+            <a class="dropdown-item" href="/myprofile">Profile</a>
             <a class="dropdown-item" href="/item-list">Courses</a>
           <div *ngIf="isAdminIn$ | async">
             <a class="dropdown-item" href="/user-list">User List</a>
