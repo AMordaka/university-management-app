@@ -30,8 +30,8 @@ export class UserListComponent implements OnInit {
     );
   }
 
-  deleteUser(id: number){
-    this.userService.delete(id);
+  deleteUser(){
+    console.log('delte');
   }
 
   open(user: User) {

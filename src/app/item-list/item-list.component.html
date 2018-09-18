@@ -1,4 +1,8 @@
 <div *ngIf="undefined !== items">
+  
+  <div *ngIf="isTeacher">
+    <button class="btn-info">Add new course</button>
+  </div>
   <table class="table table-striped" [mfData]="items" #mf="mfDataTable" [mfRowsOnPage]="5">
     <thead>
     <tr>
