@@ -17,7 +17,7 @@ const routes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'user-list', component: UserListComponent, canActivate: [AdminGuard]},
   {path: 'item-list', component: ItemListComponent, canActivate: [AuthGuard]},
-  {path: 'profile', component: UserProfileComponent, canActivate: [AuthGuard]},
+  {path: 'profile/:username', component: UserProfileComponent, canActivate: [AuthGuard]},
   {path: 'about', component: AboutComponent},
   {path: 'contact', component: ContactComponent},
 

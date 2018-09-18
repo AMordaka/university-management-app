@@ -1,3 +1,52 @@
-<p>
-  user-profile works!
-</p>
+<div class="container">
+	<div *ngIf="undefined !== user">
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title">{{user.name}} {{user.surname}}</h3>
+            </div>
+            <div class="panel-body">
+              <div class="row">              
+                <div class=" col-md-9 col-lg-9 "> 
+                  <table class="table table-user-information">
+                    <tbody>
+					<tr>
+                        <td>ID:</td>
+                        <td>{{user.id}}</td>
+                      </tr>
+                      <tr>
+                        <td>Index:</td>
+                        <td>{{user.username}}</td>
+                      </tr>
+                      <tr>
+                        <td>Created At:</td>
+                        <td>{{user.createdAt | date:'dd-MM-yyyy HH:mm'}}</td>
+                      </tr>
+                      <tr>
+                        <td>Updated At:</td>
+                        <td>{{user.updatedAt | date:'dd-MM-yyyy HH:mm'}}</td>
+                      </tr>
+                      <tr>
+                        <td>Street:</td>
+                        <td>{{user.street}}</td>
+                      </tr>
+                      <tr>
+                        <td>Number:</td>
+                        <td>{{user.numberStreet}}</td>
+                      </tr>
+                      <tr>
+                        <td>Postal Code</td>
+                        <td>{{user.postalCode}}</td>
+                      </tr>
+                      <tr>
+                        <td>Email</td>
+                        <td>{{user.email}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <a href="/item-list" class="btn btn-primary">Back</a>
+            </div>          
+          </div>
+		</div>
+    </div>
