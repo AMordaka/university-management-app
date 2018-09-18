@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/user.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AuthenticationService } from '../services/authentication.service';
+import { ItemService } from '../services/item.service';
+import { CourseInfo } from '../models/courseInfo';
+import { AlertService } from '../services/alert.service';
 
 @Component({
   selector: 'app-item-list',
@@ -12,8 +15,9 @@ export class ItemListComponent implements OnInit {
 
   public items: any;
   isTeacher = false;
+  course: CourseInfo = new CourseInfo();
 
-  constructor(private userService: UserService, private modalService: NgbModal, private authenticationService: AuthenticationService) {
+  constructor(private userService: UserService, private modalService: NgbModal, private authenticationService: AuthenticationService, private itemService: ItemService, private alertService: AlertService) {
   }
 
   ngOnInit() {
@@ -42,4 +46,28 @@ export class ItemListComponent implements OnInit {
     );
   }
 
+  putGrade() {
+    this.course.grade = '2';
+    this.course.studentUsername = '100100';
+    this.course.teacherUsername = '100101';
+    this.itemService.putGrade(this.course).subscribe(
+      data => {
+        this.alertService.success('Puted grade successful', true);
+      },
+      error => {
+        console.log(error);
+        this.alertService.error(error.error.message);
+      });
+  }
+
+  addCourse() {
+    this.itemService.createCourse('100101', 'testowe').subscribe(
+      data => {
+        this.alertService.success('Added course successful', true);
+      },
+      error => {
+        console.log(error);
+        this.alertService.error(error.error.message);
+      });
+  }
 }

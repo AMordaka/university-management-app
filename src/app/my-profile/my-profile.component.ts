@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/user.service';
 import { AuthenticationService } from '../services/authentication.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AlertService } from '../services/alert.service';
 
 @Component({
   selector: 'app-my-profile',
@@ -11,23 +11,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class MyProfileComponent implements OnInit {
 
   model: any = {};
-  updateForm: FormGroup;
 
-  constructor(private userService: UserService, private authenticationService: AuthenticationService, private formBuilder: FormBuilder) {
+  constructor(private userService: UserService, private authenticationService: AuthenticationService, private alertService: AlertService) {
   }
 
   ngOnInit() {
     this.getUser();
-    this.updateForm = this.formBuilder.group({
-      name: ['', Validators.required],
-      surname: ['', Validators.required],
-      username: ['', [Validators.required, Validators.minLength(6)]],
-      street: ['', Validators.required],
-      numberStreet: ['', Validators.required],
-      postalCode: ['', Validators.required],
-      city: ['', Validators.required],
-      email: ['', Validators.required]
-    });
   }
 
   getUser() {
@@ -39,6 +28,13 @@ export class MyProfileComponent implements OnInit {
   }
 
   update() {
-    console.log(this.model);
+    this.userService.update(this.model).subscribe(
+      data => {
+        this.alertService.success('Updated successful', true);
+      },
+      error => {
+        console.log(error);
+        this.alertService.error(error.error.message);
+      });
   }
 }

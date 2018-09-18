@@ -42,5 +42,4 @@ export class UserListComponent implements OnInit {
   openRegisterModal() {
     const modalRef = this.modalService.open(ModalRegisterComponent);
   }
-
 }
