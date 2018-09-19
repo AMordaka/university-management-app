@@ -1,11 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuthenticationService } from '../services/authentication.service';
-import { ItemService } from '../services/item.service';
-import { CourseInfo } from '../models/courseInfo';
+import {Component, OnInit, Input} from '@angular/core';
+import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {AuthenticationService} from '../services/authentication.service';
+import {ItemService} from '../services/item.service';
+import {CourseInfo} from '../models/courseInfo';
 
-import { AlertService } from '../services/alert.service';
+import {AlertService} from '../services/alert.service';
 
 @Component({
   selector: 'app-modal-grade',
@@ -21,10 +21,11 @@ export class ModalGradeComponent implements OnInit {
   @Input() studentUsername: string;
   course: CourseInfo = new CourseInfo();
 
-  constructor(public activeModal: NgbActiveModal, private formBuilder: FormBuilder, private alertService: AlertService, private authenticationService: AuthenticationService, private itemService: ItemService) { }
+  constructor(public activeModal: NgbActiveModal, private formBuilder: FormBuilder, private alertService: AlertService, private authenticationService: AuthenticationService, private itemService: ItemService) {
+  }
 
   ngOnInit() {
-   this.gradeForm = this.formBuilder.group({
+    this.gradeForm = this.formBuilder.group({
       grade: ['', Validators.required]
     });
     console.log(this.studentUsername);
@@ -34,12 +35,12 @@ export class ModalGradeComponent implements OnInit {
     return this.gradeForm.controls;
   }
 
-  onSubmit(){
-  this.submitted = true;
+  onSubmit() {
+    this.submitted = true;
     if (this.gradeForm.invalid) {
       return;
     }
-    
+
     this.course.grade = this.gradeForm.value.grade;
     this.course.studentUsername = this.studentUsername;
     this.course.teacherUsername = this.authenticationService.getUsername();
@@ -50,7 +51,7 @@ export class ModalGradeComponent implements OnInit {
       error => {
         console.log(error);
         this.alertService.error(error.error.message);
-	});
+      });
 
     this.activeModal.close();
   }

@@ -19,4 +19,8 @@ export class ItemService {
   createCourse(teacherUsername: string, courseName: string) {
     return this.http.post(`${this.API_URL}/teacher/${teacherUsername}`, courseName);
   }
+
+  getItems(teacherUsername: string, courseName: string) {
+    return this.http.get(`${this.API_URL}/items/${teacherUsername}/${courseName}`);
+  }
 }
