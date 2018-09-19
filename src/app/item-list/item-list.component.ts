@@ -5,6 +5,7 @@ import { AuthenticationService } from '../services/authentication.service';
 import { ItemService } from '../services/item.service';
 import { CourseInfo } from '../models/courseInfo';
 import { AlertService } from '../services/alert.service';
+import { ModalItemComponent } from '../modal-item/modal-item.component';
 
 @Component({
   selector: 'app-item-list',
@@ -13,7 +14,7 @@ import { AlertService } from '../services/alert.service';
 })
 export class ItemListComponent implements OnInit {
 
-  public items: any;
+  public data: any;
   isTeacher = false;
   course: CourseInfo = new CourseInfo();
 
@@ -33,7 +34,7 @@ export class ItemListComponent implements OnInit {
   getUserItems() {
     this.userService.getStudentItems(this.authenticationService.getUsername()).subscribe(
       restItems => {
-        this.items = restItems;
+        this.data = restItems;
       }
     );
   }
@@ -41,7 +42,7 @@ export class ItemListComponent implements OnInit {
   getTeacherItems() {
     this.userService.getTeacherItems(this.authenticationService.getUsername()).subscribe(
       restItems => {
-        this.items = restItems;
+        this.data = restItems;
       }
     );
   }
@@ -60,14 +61,7 @@ export class ItemListComponent implements OnInit {
       });
   }
 
-  addCourse() {
-    this.itemService.createCourse('100101', 'testowe').subscribe(
-      data => {
-        this.alertService.success('Added course successful', true);
-      },
-      error => {
-        console.log(error);
-        this.alertService.error(error.error.message);
-      });
+  openModalAddCourse(){
+    const modalRef = this.modalService.open(ModalItemComponent);
   }
 }

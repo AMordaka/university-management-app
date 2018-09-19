@@ -23,6 +23,7 @@ import { ItemListComponent } from './item-list/item-list.component';
 import { ModalRegisterComponent } from './modal-register/modal-register.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { MyProfileComponent } from './my-profile/my-profile.component';
+import { ModalItemComponent } from './modal-item/modal-item.component';
 
 @NgModule({
   declarations: [
@@ -38,9 +39,10 @@ import { MyProfileComponent } from './my-profile/my-profile.component';
     ItemListComponent,
     ModalRegisterComponent,
     UserProfileComponent,
-    MyProfileComponent
+    MyProfileComponent,
+    ModalItemComponent
   ],
-  entryComponents: [ModalComponent, ModalRegisterComponent],
+  entryComponents: [ModalComponent, ModalRegisterComponent, ModalItemComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

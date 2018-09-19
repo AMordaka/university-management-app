@@ -1,9 +1,8 @@
-<div *ngIf="undefined !== items">
-
+<div *ngIf="undefined !== data">
   <div *ngIf="isTeacher">
-    <button class="btn-info" (click)="addCourse()">Add new course</button>
+    <button class="btn-info" (click)="openModalAddCourse()">Add new course</button>
   </div>
-  <table class="table table-striped" [mfData]="items" #mf="mfDataTable" [mfRowsOnPage]="5">
+  <table class="table table-striped" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="10">
     <thead>
     <tr>
       <th style="width: 10%">
@@ -27,7 +26,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let item of items">
+    <tr *ngFor="let item of mf.data">
       <td>{{item.id}}</td>
       <td>{{item.subjectName}}</td>
       <div class="nondec">
@@ -44,7 +43,7 @@
     <tfoot>
     <tr>
       <td colspan="4">
-        <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>
+        <mfBootstrapPaginator [rowsOnPageSet]="[10,20,50]"></mfBootstrapPaginator>
       </td>
     </tr>
     </tfoot>
