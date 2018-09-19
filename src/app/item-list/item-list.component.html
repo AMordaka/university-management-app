@@ -35,8 +35,8 @@
       <td *ngIf="isTeacher">{{item.username}}</td>
       <td>{{item.grade}}</td>
       <td *ngIf="isTeacher">
-        <button *ngIf="item.grade !== null" class="btn-secondary">EDIT</button>
-        <button *ngIf="item.grade === null" class="btn-info">PUT</button>
+        <button *ngIf="item.grade !== null" class="btn-secondary" (click)="openModalGrade(item.username)">EDIT</button>
+        <button *ngIf="item.grade === null" class="btn-info" (click)="openModalGrade(item.username)">PUT</button>
       </td>
     </tr>
     </tbody>

@@ -3,9 +3,9 @@ import { UserService } from '../services/user.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AuthenticationService } from '../services/authentication.service';
 import { ItemService } from '../services/item.service';
-import { CourseInfo } from '../models/courseInfo';
 import { AlertService } from '../services/alert.service';
 import { ModalItemComponent } from '../modal-item/modal-item.component';
+import { ModalGradeComponent } from '../modal-grade/modal-grade.component';
 
 @Component({
   selector: 'app-item-list',
@@ -16,7 +16,6 @@ export class ItemListComponent implements OnInit {
 
   public data: any;
   isTeacher = false;
-  course: CourseInfo = new CourseInfo();
 
   constructor(private userService: UserService, private modalService: NgbModal, private authenticationService: AuthenticationService, private itemService: ItemService, private alertService: AlertService) {
   }
@@ -47,18 +46,9 @@ export class ItemListComponent implements OnInit {
     );
   }
 
-  putGrade() {
-    this.course.grade = '2';
-    this.course.studentUsername = '100100';
-    this.course.teacherUsername = '100101';
-    this.itemService.putGrade(this.course).subscribe(
-      data => {
-        this.alertService.success('Puted grade successful', true);
-      },
-      error => {
-        console.log(error);
-        this.alertService.error(error.error.message);
-      });
+  openModalGrade(studentUsername: string) {
+    const modalRef = this.modalService.open(ModalGradeComponent);
+    modalRef.componentInstance.studentUsername = studentUsername;
   }
 
   openModalAddCourse(){
