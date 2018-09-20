@@ -19,6 +19,7 @@ export class ModalGradeComponent implements OnInit {
   submitted = false;
 
   @Input() studentUsername: string;
+  @Input() courseId: string;
   course: CourseInfo = new CourseInfo();
 
   constructor(public activeModal: NgbActiveModal, private formBuilder: FormBuilder, private alertService: AlertService, private authenticationService: AuthenticationService, private itemService: ItemService) {
@@ -44,7 +45,7 @@ export class ModalGradeComponent implements OnInit {
     this.course.grade = this.gradeForm.value.grade;
     this.course.studentUsername = this.studentUsername;
     this.course.teacherUsername = this.authenticationService.getUsername();
-    this.itemService.putGrade(this.course).subscribe(
+    this.itemService.putGrade(this.course, this.courseId).subscribe(
       data => {
         this.alertService.success('Puted grade successful', true);
       },

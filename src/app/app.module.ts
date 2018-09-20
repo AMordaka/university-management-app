@@ -25,6 +25,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { MyProfileComponent } from './my-profile/my-profile.component';
 import { ModalItemComponent } from './modal-item/modal-item.component';
 import { ModalGradeComponent } from './modal-grade/modal-grade.component';
+import { ItemProfileComponent } from './item-profile/item-profile.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { ModalGradeComponent } from './modal-grade/modal-grade.component';
     UserProfileComponent,
     MyProfileComponent,
     ModalItemComponent,
-    ModalGradeComponent
+    ModalGradeComponent,
+    ItemProfileComponent
   ],
   entryComponents: [ModalComponent, ModalRegisterComponent, ModalItemComponent,ModalGradeComponent],
   imports: [

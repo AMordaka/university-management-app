@@ -12,8 +12,8 @@ export class ItemService {
   constructor(private http: HttpClient) {
   }
 
-  putGrade(courseInfo: CourseInfo) {
-    return this.http.post(`${this.API_URL}/2/putGrade`, courseInfo);
+  putGrade(courseInfo: CourseInfo, courseId: string) {
+    return this.http.post(`${this.API_URL}/${courseId}/putGrade`, courseInfo);
   }
 
   createCourse(teacherUsername: string, courseName: string) {
