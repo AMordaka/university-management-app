@@ -23,4 +23,8 @@ export class ItemService {
   getItems(teacherUsername: string, courseName: string) {
     return this.http.get(`${this.API_URL}/items/${teacherUsername}/${courseName}`);
   }
+
+  assignStudentsToCourse(courseName: string, assigned: Array<string>){
+    return this.http.post(`${this.API_URL}/items/${courseName}`, assigned);
+  }
 }

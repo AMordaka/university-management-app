@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/user.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { User } from '../models/user';
-import { AlertService } from '../services/alert.service';
 import { ModalComponent } from '../modal/modal.component';
 import { ModalRegisterComponent } from '../modal-register/modal-register.component';
 
@@ -15,7 +14,7 @@ export class UserListComponent implements OnInit {
 
   public data: any;
 
-  constructor(private userService: UserService, private alertService: AlertService, private modalService: NgbModal) {
+  constructor(private userService: UserService, private modalService: NgbModal) {
   }
 
   ngOnInit() {

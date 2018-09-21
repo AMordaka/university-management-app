@@ -26,6 +26,7 @@ import { MyProfileComponent } from './my-profile/my-profile.component';
 import { ModalItemComponent } from './modal-item/modal-item.component';
 import { ModalGradeComponent } from './modal-grade/modal-grade.component';
 import { ItemProfileComponent } from './item-profile/item-profile.component';
+import { ModalPickerComponent } from './modal-picker/modal-picker.component';
 
 @NgModule({
   declarations: [
@@ -44,9 +45,10 @@ import { ItemProfileComponent } from './item-profile/item-profile.component';
     MyProfileComponent,
     ModalItemComponent,
     ModalGradeComponent,
-    ItemProfileComponent
+    ItemProfileComponent,
+    ModalPickerComponent
   ],
-  entryComponents: [ModalComponent, ModalRegisterComponent, ModalItemComponent,ModalGradeComponent],
+  entryComponents: [ModalComponent, ModalRegisterComponent, ModalItemComponent,ModalGradeComponent, ModalPickerComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

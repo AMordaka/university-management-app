@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ItemService } from '../services/item.service';
 import { ModalGradeComponent } from '../modal-grade/modal-grade.component';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalPickerComponent } from '../modal-picker/modal-picker.component';
 
 @Component({
   selector: 'app-item-profile',
@@ -31,10 +32,14 @@ export class ItemProfileComponent implements OnInit {
     });
   }
 
-
   openModalGrade(studentUsername: string, courseId: string) {
     const modalRef = this.modalService.open(ModalGradeComponent);
     modalRef.componentInstance.studentUsername = studentUsername;
     modalRef.componentInstance.courseId = courseId;
+  }
+
+  openModalPicker(courseName: string){
+  	const modalRef = this.modalService.open(ModalPickerComponent);
+    modalRef.componentInstance.courseName = courseName;
   }
 }

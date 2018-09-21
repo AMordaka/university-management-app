@@ -1,5 +1,6 @@
 <div *ngIf="undefined !== data">
   <h3>{{courseName}}</h3>
+    <button class="btn-info" (click)="this.openModalPicker(courseName)">Assign Student</button>
   <table class="table table-striped" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="10">
     <thead>
     <tr>
