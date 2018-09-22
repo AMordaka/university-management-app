@@ -18,6 +18,10 @@ export class UserService {
     return this.http.get<any[]>(`${this.API_URL}/users`).pipe(map(data => data));
   }
 
+  getStudents(courseName: string) {
+    return this.http.get<any[]>(`${this.API_URL}/students/${courseName}`).pipe(map(data => data));
+  }
+
   register(user: User) {
     return this.http.post(`${this.API_URL}/api/auth/signup`, user);
   }

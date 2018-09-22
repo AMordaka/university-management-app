@@ -15,15 +15,16 @@ export class ItemProfileComponent implements OnInit {
   data: any;
   courseName: string;
 
-  constructor(private route: ActivatedRoute, private itemService: ItemService, private modalService: NgbModal) { }
-
-  ngOnInit() {
- 	this.getItems();
+  constructor(private route: ActivatedRoute, private itemService: ItemService, private modalService: NgbModal) {
   }
 
-  getItems(){
-      this.route.paramMap.subscribe(params => {
-      this.courseName =  params.get('courseName');
+  ngOnInit() {
+    this.getItems();
+  }
+
+  getItems() {
+    this.route.paramMap.subscribe(params => {
+      this.courseName = params.get('courseName');
       this.itemService.getItems(params.get('username'), params.get('courseName')).subscribe(
         restItems => {
           this.data = restItems;
@@ -38,8 +39,8 @@ export class ItemProfileComponent implements OnInit {
     modalRef.componentInstance.courseId = courseId;
   }
 
-  openModalPicker(courseName: string){
-  	const modalRef = this.modalService.open(ModalPickerComponent);
+  openModalPicker(courseName: string) {
+    const modalRef = this.modalService.open(ModalPickerComponent);
     modalRef.componentInstance.courseName = courseName;
   }
 }

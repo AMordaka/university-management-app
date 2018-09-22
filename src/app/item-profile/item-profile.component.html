@@ -1,6 +1,6 @@
 <div *ngIf="undefined !== data">
   <h3>{{courseName}}</h3>
-    <button class="btn-info" (click)="this.openModalPicker(courseName)">Assign Student</button>
+  <button class="btn-info" (click)="this.openModalPicker(courseName)">Assign Student</button>
   <table class="table table-striped" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="10">
     <thead>
     <tr>
@@ -24,8 +24,11 @@
       <td>{{item.username}}</td>
       <td>{{item.grade}}</td>
       <td>
-      	<button *ngIf="item.grade !== null" class="btn-secondary" (click)="openModalGrade(item.username, item.id)">EDIT</button>
-        <button *ngIf="item.grade === null" class="btn-info" (click)="openModalGrade(item.username, item.id)">PUT</button>
+        <button *ngIf="item.grade !== null" class="btn-secondary" (click)="openModalGrade(item.username, item.id)">
+          EDIT
+        </button>
+        <button *ngIf="item.grade === null" class="btn-info" (click)="openModalGrade(item.username, item.id)">PUT
+        </button>
       </td>
     </tr>
     </tbody>

@@ -11,12 +11,12 @@
       <th style="width: 40%">
         <mfDefaultSorter by="subjectName">Subject Name</mfDefaultSorter>
       </th>
-        <th *ngIf="!isTeacher" style="width: 40%">
-          <mfDefaultSorter by="name">Person</mfDefaultSorter>
-        </th>
-        <th *ngIf="!isTeacher" style="width: 10%">
-          <mfDefaultSorter by="grade">Grade</mfDefaultSorter>
-        </th>
+      <th *ngIf="!isTeacher" style="width: 40%">
+        <mfDefaultSorter by="name">Person</mfDefaultSorter>
+      </th>
+      <th *ngIf="!isTeacher" style="width: 10%">
+        <mfDefaultSorter by="grade">Grade</mfDefaultSorter>
+      </th>
     </tr>
     </thead>
     <tbody>
@@ -27,7 +27,8 @@
           {{item.subjectName}}
         </div>
         <div *ngIf="isTeacher" class="nondec">
-          <a routerLink="/item/{{this.authenticationService.getUsername()}}/{{item.subjectName}}">{{item.subjectName}}</a>
+          <a
+            routerLink="/item/{{this.authenticationService.getUsername()}}/{{item.subjectName}}">{{item.subjectName}}</a>
         </div>
       </td>
       <td *ngIf="!isTeacher" class="nondec"><a routerLink="/profile/{{item.username}}">{{item.name}}</a></td>
