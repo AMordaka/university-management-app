@@ -47,5 +47,8 @@ export class ItemListComponent implements OnInit {
 
   openModalAddCourse() {
     const modalRef = this.modalService.open(ModalItemComponent);
+    modalRef.result.then((result) => {
+      this.getTeacherItems();
+    }
   }
 }

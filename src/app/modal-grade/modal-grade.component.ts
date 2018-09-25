@@ -1,4 +1,4 @@
-import {Component, OnInit, Input} from '@angular/core';
+import {Component, OnInit, Input } from '@angular/core';
 import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {AuthenticationService} from '../services/authentication.service';
@@ -29,7 +29,6 @@ export class ModalGradeComponent implements OnInit {
     this.gradeForm = this.formBuilder.group({
       grade: ['', Validators.required]
     });
-    console.log(this.studentUsername);
   }
 
   get f() {
@@ -50,7 +49,6 @@ export class ModalGradeComponent implements OnInit {
         this.alertService.success('Puted grade successful', true);
       },
       error => {
-        console.log(error);
         this.alertService.error(error.error.message);
       });
 

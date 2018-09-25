@@ -37,10 +37,16 @@ export class ItemProfileComponent implements OnInit {
     const modalRef = this.modalService.open(ModalGradeComponent);
     modalRef.componentInstance.studentUsername = studentUsername;
     modalRef.componentInstance.courseId = courseId;
+    modalRef.result.then((result) => {
+      this.getItems();
+    }
   }
 
   openModalPicker(courseName: string) {
     const modalRef = this.modalService.open(ModalPickerComponent);
     modalRef.componentInstance.courseName = courseName;
+    modalRef.result.then((result) => {
+      this.getItems();
+    }
   }
 }
