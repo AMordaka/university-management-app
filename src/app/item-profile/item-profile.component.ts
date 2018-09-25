@@ -39,7 +39,7 @@ export class ItemProfileComponent implements OnInit {
     modalRef.componentInstance.courseId = courseId;
     modalRef.result.then((result) => {
       this.getItems();
-    }
+    });
   }
 
   openModalPicker(courseName: string) {
@@ -47,6 +47,6 @@ export class ItemProfileComponent implements OnInit {
     modalRef.componentInstance.courseName = courseName;
     modalRef.result.then((result) => {
       this.getItems();
-    }
+    });
   }
 }

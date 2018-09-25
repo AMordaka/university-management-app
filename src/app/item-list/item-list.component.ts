@@ -49,6 +49,6 @@ export class ItemListComponent implements OnInit {
     const modalRef = this.modalService.open(ModalItemComponent);
     modalRef.result.then((result) => {
       this.getTeacherItems();
-    }
+    });
   }
 }
