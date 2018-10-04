@@ -50,7 +50,7 @@ export class UserService {
     return this.http.post(`${this.API_URL}/updateUserByAdmin`, user);
   }
 
-  delete(id: number) {
+  deleteUser(id: number) {
     return this.http.delete(`${this.API_URL}/user/` + id);
   }
 }
