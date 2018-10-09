@@ -7,7 +7,7 @@ import { CourseInfo } from '../models/courseInfo';
 })
 export class ItemService {
 
-  API_URL = 'https://university-management-app-back.herokuapp.com';
+  API_URL = 'http://localhost:5000'
 
   constructor(private http: HttpClient) {
   }

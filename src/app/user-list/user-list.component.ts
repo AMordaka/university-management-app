@@ -4,6 +4,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { User } from '../models/user';
 import { ModalComponent } from '../modal/modal.component';
 import { ModalRegisterComponent } from '../modal-register/modal-register.component';
+import { AlertService } from '../services/alert.service';
 
 @Component({
   selector: 'app-user-list',
@@ -14,7 +15,7 @@ export class UserListComponent implements OnInit {
 
   public data: any;
 
-  constructor(private userService: UserService, private modalService: NgbModal) {
+  constructor(private userService: UserService, private modalService: NgbModal, private alertService: AlertService) {
   }
 
   ngOnInit() {
@@ -30,7 +31,14 @@ export class UserListComponent implements OnInit {
   }
 
   deleteUser(userId: number) {
-    this.userService.deleteUser(userId);
+    this.userService.deleteUser(userId).subscribe(
+      data => {
+        this.alertService.success('Deleted user successful', true);
+      },
+      error => {
+        this.alertService.error(error.error.message);
+      }
+    );
   }
 
   open(user: User) {

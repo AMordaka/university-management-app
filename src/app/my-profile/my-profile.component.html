@@ -11,8 +11,14 @@
                   <hr>
                 </div>
               </div>
-              <div><img height="150px" width="150px" [src]="_d.bypassSecurityTrustUrl(imgsrc)"></div>
-              <input type="file" (change)="fileChange($event)">
+              <form (ngSubmit)="updateAvatar()">
+                <div><a href="{{fileUpload}}">{{fileUpload}}</a></div>
+                <input type="file" (change)="fileChange($event)">
+                <button name="submit" type="submit" class="btn btn-primary">Update My Avatar</button>
+              </form>
+
+              <button (click)="getAvatar()">Pobierz obrazek</button>
+
               <form (ngSubmit)="update()">
                 <div class="row">
                   <div class="col-md-12">
@@ -33,7 +39,7 @@
                       <label for="email" class="col-4 col-form-label">Email</label>
                       <div class="col-8">
                         <input name="email" [(ngModel)]="model.email" class="form-control here" required="required"
-                               type="text">
+                               type="text" readonly>
                       </div>
                     </div>
                     <div class="form-group row">
