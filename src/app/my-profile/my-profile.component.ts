@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { UserService } from '../services/user.service';
-import { AuthenticationService } from '../services/authentication.service';
-import { AlertService } from '../services/alert.service';
-import { DomSanitizer } from '@angular/platform-browser';
-import { Observable } from 'rxjs';
+import {Component, OnInit} from '@angular/core';
+import {UserService} from '../services/user.service';
+import {AuthenticationService} from '../services/authentication.service';
+import {AlertService} from '../services/alert.service';
+import {DomSanitizer} from '@angular/platform-browser';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-my-profile',
@@ -13,7 +13,7 @@ import { Observable } from 'rxjs';
 export class MyProfileComponent implements OnInit {
 
   model: any = {};
-  fileUpload: Observable<string>;
+  imageToShow: Observable<string>;
   uploadedFile: File;
 
   constructor(private userService: UserService, private authenticationService: AuthenticationService, private alertService: AlertService, public _d: DomSanitizer) {
@@ -21,6 +21,7 @@ export class MyProfileComponent implements OnInit {
 
   ngOnInit() {
     this.getUser();
+    this.getAvatar();
   }
 
   getUser() {
@@ -43,13 +44,32 @@ export class MyProfileComponent implements OnInit {
 
   fileChange(e) {
     this.uploadedFile = e.srcElement.files[0];
+    this.updateAvatar();
   }
 
   updateAvatar() {
     this.userService.addAvatar(this.authenticationService.getUsername(), this.uploadedFile).subscribe();
+    location.reload();
   }
 
   getAvatar() {
-    this.userService.getAvatar(this.authenticationService.getUsername()).subscribe();
+    this.userService.getAvatar(this.authenticationService.getUsername()).subscribe(data => {
+      this.createImageFromBlob(data);
+    }, error => {
+      console.log(error);
+    });
+  }
+
+  createImageFromBlob(image: Blob) {
+    if (image != null) {
+      const reader = new FileReader();
+      reader.addEventListener('load', () => {
+        this.imageToShow = reader.result;
+      }, false);
+
+      if (image) {
+        reader.readAsDataURL(image);
+      }
+    }
   }
 }

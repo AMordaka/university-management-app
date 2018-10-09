@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/user.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AuthenticationService } from '../services/authentication.service';
-import { ItemService } from '../services/item.service';
-import { AlertService } from '../services/alert.service';
 import { ModalItemComponent } from '../modal-item/modal-item.component';
 
 @Component({
@@ -16,7 +14,7 @@ export class ItemListComponent implements OnInit {
   public data: any;
   isTeacher = false;
 
-  constructor(private userService: UserService, private modalService: NgbModal, public authenticationService: AuthenticationService, private itemService: ItemService, private alertService: AlertService) {
+  constructor(private userService: UserService, private modalService: NgbModal, public authenticationService: AuthenticationService) {
   }
 
   ngOnInit() {
@@ -48,7 +46,7 @@ export class ItemListComponent implements OnInit {
   openModalAddCourse() {
     const modalRef = this.modalService.open(ModalItemComponent);
     modalRef.result.then((result) => {
-      this.getTeacherItems();
+      location.reload();
     });
   }
 }

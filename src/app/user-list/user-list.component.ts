@@ -30,10 +30,11 @@ export class UserListComponent implements OnInit {
     );
   }
 
-  deleteUser(userId: number) {
-    this.userService.deleteUser(userId).subscribe(
+  deleteUser(user: User) {
+    this.userService.deleteUser(user.id).subscribe(
       data => {
         this.alertService.success('Deleted user successful', true);
+        this.data = this.data.filter(h => h !== user);
       },
       error => {
         this.alertService.error(error.error.message);

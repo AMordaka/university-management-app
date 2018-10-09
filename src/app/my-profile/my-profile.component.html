@@ -6,54 +6,32 @@
           <div class="card mx-4">
             <div class="card-body p-4">
               <div class="row">
-                <div class="col-md-12">
-                  <h4>Your Profile</h4>
+                <div class="col-md-12 ">
+                  <h4 class="text-center">{{model.name}} {{model.surname}}</h4>
                   <hr>
                 </div>
               </div>
-              <form (ngSubmit)="updateAvatar()">
-                <div><a href="{{fileUpload}}">{{fileUpload}}</a></div>
-                <input type="file" (change)="fileChange($event)">
-                <button name="submit" type="submit" class="btn btn-primary">Update My Avatar</button>
-              </form>
-
-              <button (click)="getAvatar()">Pobierz obrazek</button>
-
+              <div class="container">
+                <div class="row">
+                  <div class="col-4">
+                    <img *ngIf="imageToShow" [src]="imageToShow" width="180px" height="180px"
+                         class="rounded-circle product"/>
+                  </div>
+                </div>
+              </div>
               <form (ngSubmit)="update()">
                 <div class="row">
                   <div class="col-md-12">
                     <div class="form-group row">
-                      <label for="id" class="col-4 col-form-label">ID</label>
-                      <div class="col-8">
-                        <input id="id" name="id" [(ngModel)]="model.id" class="form-control here" readonly>
-                      </div>
-                    </div>
-                    <div class="form-group row">
                       <label for="username" class="col-4 col-form-label">Index</label>
                       <div class="col-8">
-                        <input id="username" name="username" [(ngModel)]="model.username" class="form-control here"
-                               readonly>
+                        <label class="col-form-label">{{model.username}}</label>
                       </div>
                     </div>
                     <div class="form-group row">
                       <label for="email" class="col-4 col-form-label">Email</label>
                       <div class="col-8">
-                        <input name="email" [(ngModel)]="model.email" class="form-control here" required="required"
-                               type="text" readonly>
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <label for="name" class="col-4 col-form-label">First Name</label>
-                      <div class="col-8">
-                        <input name="name" [(ngModel)]="model.name" class="form-control here" required="required"
-                               type="text">
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <label for="surname" class="col-4 col-form-label">Last Name</label>
-                      <div class="col-8">
-                        <input name="surname" [(ngModel)]="model.surname" class="form-control here" required="required"
-                               type="text">
+                        <label class="col-form-label">{{model.email}}</label>
                       </div>
                     </div>
                     <div class="form-group row">
@@ -84,10 +62,12 @@
                                type="text">
                       </div>
                     </div>
-                    <div class="form-group row">
-                      <div class="offset-4 col-8">
-                        <button name="submit" type="submit" class="btn btn-primary">Update My Profile</button>
+                    <div class="form-group row offset-2">
+                      <div>
+                        <label for="file-upload" class="custom-file-upload"> <i class="fa fa-cloud-upload"></i> Change Avatar </label>
+                        <input id="file-upload" type="file" (change)="fileChange($event)"/>
                       </div>
+                      <button name="submit" type="submit" class="btn-sm btn-success">Update My Profile</button>
                     </div>
                   </div>
                 </div>
@@ -99,3 +79,6 @@
     </div>
   </main>
 </div>
+
+
+

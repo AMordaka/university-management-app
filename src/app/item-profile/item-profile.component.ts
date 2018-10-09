@@ -38,7 +38,7 @@ export class ItemProfileComponent implements OnInit {
     modalRef.componentInstance.studentUsername = studentUsername;
     modalRef.componentInstance.courseId = courseId;
     modalRef.result.then((result) => {
-      this.getItems();
+      location.reload();
     });
   }
 
@@ -46,7 +46,7 @@ export class ItemProfileComponent implements OnInit {
     const modalRef = this.modalService.open(ModalPickerComponent);
     modalRef.componentInstance.courseName = courseName;
     modalRef.result.then((result) => {
-      this.getItems();
+      location.reload();
     });
   }
 }

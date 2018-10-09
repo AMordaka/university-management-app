@@ -1,9 +1,9 @@
-import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpRequest } from '@angular/common/http';
-import { map } from 'rxjs/operators';
+import {Injectable} from '@angular/core';
+import {HttpClient, HttpHeaders, HttpRequest} from '@angular/common/http';
+import {map} from 'rxjs/operators';
 
-import { User } from '../models/user';
-import { Observable } from 'rxjs';
+import {User} from '../models/user';
+import {Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -68,7 +68,7 @@ export class UserService {
   }
 
   getAvatar(username: string): Observable<any> {
-    return this.http.get(`${this.API_URL}/file/getavatar/` + username);
+    return this.http.get(`${this.API_URL}/file/getavatar/` + username, {responseType: 'blob'});
   }
 }
 
