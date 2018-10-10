@@ -1,34 +1,35 @@
 <nav class="navbar navbar-dark bg-dark mb-2">
   <div class="container">
-  <a class="navbar-brand" href="/">University System Management</a>
-  <div class="navbar-expand mr-auto">
-    <div class="navbar-nav">
-      <a class="nav-item nav-link active" href="/">Home</a>
-      <a class="nav-item nav-link" href="/about">About</a>
-      <a class="nav-item nav-link" href="/contact">Contact</a>
+    <a><img src="https://virtul.p.lodz.pl/images/kaf_pl.png" width="40px" height="40px"></a>
+    <a class="navbar-brand ml-3" href="/">University System Management</a>
+    <div class="navbar-expand mr-auto">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" href="/">Home</a>
+        <a class="nav-item nav-link" href="/about">About</a>
+        <a class="nav-item nav-link" href="/contact">Contact</a>
+      </div>
     </div>
-  </div>
-  <div class="navbar-expand m1-auto">
-    <div class="navbar-nav">
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-           aria-expanded="false">Account</a>
-        <div class="dropdown-menu">
-          <a *ngIf="!(isLoggedIn$ | async)" class="dropdown-item" href="/login">Sign in</a>
-          <a *ngIf="!(isLoggedIn$ | async)" class="dropdown-item" href="/register">Sign up</a>
-          <div *ngIf="isLoggedIn$ | async">
-            <a class="dropdown-item" href="/myprofile">Profile</a>
-            <a *ngIf="!(isAdminIn$ | async)" class="dropdown-item" href="/item-list">Courses</a>
-            <div *ngIf="isAdminIn$ | async">
-              <a class="dropdown-item" href="/user-list">User List</a>
+    <div class="navbar-expand m1-auto">
+      <div class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+             aria-expanded="false">Account</a>
+          <div class="dropdown-menu">
+            <a *ngIf="!(isLoggedIn$ | async)" class="dropdown-item" href="/login">Sign in</a>
+            <a *ngIf="!(isLoggedIn$ | async)" class="dropdown-item" href="/register">Sign up</a>
+            <div *ngIf="isLoggedIn$ | async">
+              <a class="dropdown-item" href="/myprofile">Profile</a>
+              <a *ngIf="!(isAdminIn$ | async)" class="dropdown-item" href="/item-list">Courses</a>
+              <div *ngIf="isAdminIn$ | async">
+                <a class="dropdown-item" href="/user-list">User List</a>
+              </div>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" id="custom_button" (click)="onLogout()">Logout</a>
             </div>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" id="custom_button" (click)="onLogout()">Logout</a>
           </div>
-        </div>
-      </li>
+        </li>
+      </div>
     </div>
-  </div>
   </div>
 </nav>
 
