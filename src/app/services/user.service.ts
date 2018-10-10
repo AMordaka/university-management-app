@@ -10,7 +10,7 @@ import {Observable} from 'rxjs';
 })
 export class UserService {
 
-  API_URL = 'http://localhost:5000';
+  API_URL = 'https://university-management-app-back.herokuapp.com';
 
   constructor(private http: HttpClient) {
   }

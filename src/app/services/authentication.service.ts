@@ -9,7 +9,7 @@ import { UserPrincipal } from '../models/userPrincipal';
 })
 export class AuthenticationService {
 
-  API_URL = 'http://localhost:5000';
+  API_URL = 'https://university-management-app-back.herokuapp.com';
 
   user: UserPrincipal = new UserPrincipal();
 
