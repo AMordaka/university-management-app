@@ -1,6 +1,6 @@
 <div *ngIf="undefined !== data">
   <div *ngIf="isTeacher">
-    <button class="btn-info" (click)="openModalAddCourse()">Add new course</button>
+    <button class="btn-info" (click)="openModalAddCourse()">{{ 'APP.ADD_NEW_COURSE' | translate }}</button>
   </div>
   <table class="table table-striped" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="10">
     <thead>
@@ -9,13 +9,13 @@
         <mfDefaultSorter by="id">ID</mfDefaultSorter>
       </th>
       <th style="width: 40%">
-        <mfDefaultSorter by="subjectName">Subject Name</mfDefaultSorter>
+        <mfDefaultSorter by="subjectName">{{ 'APP.SUBJECT_NAME' | translate }}</mfDefaultSorter>
       </th>
       <th *ngIf="!isTeacher" style="width: 40%">
-        <mfDefaultSorter by="name">Person</mfDefaultSorter>
+        <mfDefaultSorter by="name">{{ 'APP.PERSON' | translate }}</mfDefaultSorter>
       </th>
       <th *ngIf="!isTeacher" style="width: 10%">
-        <mfDefaultSorter by="grade">Grade</mfDefaultSorter>
+        <mfDefaultSorter by="grade">{{ 'APP.GRADE' | translate }}</mfDefaultSorter>
       </th>
     </tr>
     </thead>

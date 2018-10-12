@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { DataTableModule } from 'angular-6-datatable';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,6 +25,14 @@ import { ModalItemComponent } from './modal-item/modal-item.component';
 import { ModalGradeComponent } from './modal-grade/modal-grade.component';
 import { ItemProfileComponent } from './item-profile/item-profile.component';
 import { ModalPickerComponent } from './modal-picker/modal-picker.component';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { SharedModule } from './shared.module';
+
+
+export function HttpLoaderFactory(httpClient: HttpClient) {
+  return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
+}
 
 @NgModule({
   declarations: [
@@ -56,6 +64,14 @@ import { ModalPickerComponent } from './modal-picker/modal-picker.component';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
+    SharedModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    }),
   ],
   providers: [AuthGuard, AdminGuard],
   bootstrap: [AppComponent]

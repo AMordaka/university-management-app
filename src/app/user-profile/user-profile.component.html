@@ -18,38 +18,38 @@
                 <td>{{user.username}}</td>
               </tr>
               <tr>
-                <td>Created At:</td>
+                <td>{{ 'APP.CREATED_AT' | translate }}:</td>
                 <td>{{user.createdAt | date:'dd-MM-yyyy HH:mm'}}</td>
               </tr>
               <tr>
-                <td>Updated At:</td>
+                <td>{{ 'APP.UPDATED_AT' | translate }}:</td>
                 <td>{{user.updatedAt | date:'dd-MM-yyyy HH:mm'}}</td>
               </tr>
               <tr>
-                <td>Street:</td>
+                <td>{{ 'APP.STREET' | translate }}:</td>
                 <td>{{user.street}}</td>
               </tr>
               <tr>
-                <td>Number:</td>
+                <td>{{ 'APP.NUMBER_STREET' | translate }}:</td>
                 <td>{{user.numberStreet}}</td>
               </tr>
               <tr>
-                <td>Postal Code</td>
+                <td>{{ 'APP.POSTAL_CODE' | translate }}:</td>
                 <td>{{user.postalCode}}</td>
               </tr>
               <tr>
-                <td>City</td>
+                <td>{{ 'APP.CITY' | translate }}:</td>
                 <td>{{user.city}}</td>
               </tr>
               <tr>
-                <td>Email</td>
+                <td>{{ 'APP.EMAIL' | translate }}:</td>
                 <td>{{user.email}}</td>
               </tr>
               </tbody>
             </table>
           </div>
         </div>
-        <a href="/" class="btn btn-primary">Back to Home</a>
+        <a href="/" class="btn btn-primary">{{ 'APP.BACK_HOME' | translate }}</a>
       </div>
     </div>
   </div>

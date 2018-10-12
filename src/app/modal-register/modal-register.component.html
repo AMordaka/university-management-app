@@ -1,5 +1,5 @@
 <div class="modal-header">
-  <h4 class="modal-title">Register Teacher</h4>
+  <h4 class="modal-title">{{ 'APP.REGISTER_TEACHER' | translate }}</h4>
   <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
     <span aria-hidden="true">&times;</span>
   </button>
@@ -7,19 +7,19 @@
 <div class="modal-body">
   <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
-      <label for="name">First Name</label>
+      <label for="name">{{ 'APP.FIRST_NAME' | translate }}</label>
       <input type="text" formControlName="name" class="form-control"
              [ngClass]="{ 'is-invalid': submitted && f.name.errors }"/>
       <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
-        <div *ngIf="f.name.errors.required">First Name is required</div>
+        <div *ngIf="f.name.errors.required">{{ 'APP.FIRST_NAME_REQUIRED' | translate }}</div>
       </div>
     </div>
     <div class="form-group">
-      <label for="surname">Last Name</label>
+      <label for="surname">{{ 'APP.LAST_NAME' | translate }}</label>
       <input type="text" formControlName="surname" class="form-control"
              [ngClass]="{ 'is-invalid': submitted && f.surname.errors }"/>
       <div *ngIf="submitted && f.surname.errors" class="invalid-feedback">
-        <div *ngIf="f.surname.errors.required">Last Name is required</div>
+        <div *ngIf="f.surname.errors.required">{{ 'APP.LAST_NAME_REQUIRED' | translate }}</div>
       </div>
     </div>
     <div class="form-group">
@@ -27,63 +27,63 @@
       <input type="text" formControlName="username" class="form-control"
              [ngClass]="{ 'is-invalid': submitted && f.username.errors }"/>
       <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
-        <div *ngIf="f.username.errors.required">Index is required</div>
+        <div *ngIf="f.username.errors.required">{{ 'APP.INDEX_REQUIRED' | translate }}</div>
       </div>
     </div>
     <div class="form-group">
-      <label for="email">Email</label>
+      <label for="email">{{ 'APP.EMAIL' | translate }}</label>
       <input type="text" formControlName="email" class="form-control"
              [ngClass]="{ 'is-invalid': submitted && f.email.errors }"/>
       <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-        <div *ngIf="f.email.errors.required">Email is required</div>
+        <div *ngIf="f.email.errors.required">{{ 'APP.EMAIL_REQUIRED' | translate }}</div>
       </div>
     </div>
     <div class="form-group">
-      <label for="password">Password</label>
+      <label for="password">{{ 'APP.PASSWORD' | translate }}</label>
       <input type="password" formControlName="password" class="form-control"
              [ngClass]="{ 'is-invalid': submitted && f.password.errors }"/>
       <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-        <div *ngIf="f.password.errors.required">Password is required</div>
-        <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+        <div *ngIf="f.password.errors.required">{{ 'APP.PASSWORD_REQUIRED' | translate }}</div>
+        <div *ngIf="f.password.errors.minlength">{{ 'APP.PASSWORD_LENGTH' | translate }}</div>
       </div>
     </div>
     <div class="form-group">
-      <label for="street">Street</label>
+      <label for="street">{{ 'APP.STREET' | translate }}</label>
       <input type="text" formControlName="street" class="form-control"
              [ngClass]="{ 'is-invalid': submitted && f.street.errors }"/>
       <div *ngIf="submitted && f.street.errors" class="invalid-feedback">
-        <div *ngIf="f.street.errors.required">Street is required</div>
+        <div *ngIf="f.street.errors.required">{{ 'APP.STREET_REQUIRED' | translate }}d</div>
       </div>
     </div>
     <div class="form-group">
-      <label for="numberStreet">Number Street</label>
+      <label for="numberStreet">{{ 'APP.NUMBER_STREET' | translate }}</label>
       <input type="text" formControlName="numberStreet" class="form-control"
              [ngClass]="{ 'is-invalid': submitted && f.numberStreet.errors }"/>
       <div *ngIf="submitted && f.numberStreet.errors" class="invalid-feedback">
-        <div *ngIf="f.numberStreet.errors.required">Number Street is required</div>
+        <div *ngIf="f.numberStreet.errors.required">{{ 'APP.NUMBER_STREET_REQUIRED' | translate }}</div>
       </div>
     </div>
     <div class="form-group">
-      <label for="postalCode">Postal Code</label>
+      <label for="postalCode">{{ 'APP.POSTAL_CODE' | translate }}</label>
       <input type="text" formControlName="postalCode" class="form-control"
              [ngClass]="{ 'is-invalid': submitted && f.postalCode.errors }"/>
       <div *ngIf="submitted && f.postalCode.errors" class="invalid-feedback">
-        <div *ngIf="f.postalCode.errors.required">Postal Code is required</div>
+        <div *ngIf="f.postalCode.errors.required">{{ 'APP.POSTAL_CODE_REQUIRED' | translate }}</div>
       </div>
     </div>
     <div class="form-group">
-      <label for="city">City</label>
+      <label for="city">{{ 'APP.CITY' | translate }}</label>
       <input type="text" formControlName="city" class="form-control"
              [ngClass]="{ 'is-invalid': submitted && f.city.errors }"/>
       <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
-        <div *ngIf="f.city.errors.required">City is required</div>
+        <div *ngIf="f.city.errors.required">{{ 'APP.CITY_REQUIRED' | translate }}</div>
       </div>
     </div>
     <div class="modal-footer">
-      <button [disabled]="loading" class="btn btn-primary" (click)="onSubmit()">Update</button>
+      <button [disabled]="loading" class="btn btn-primary" (click)="onSubmit()">{{ 'APP.UPDATE' | translate }}</button>
       <img *ngIf="loading"
            src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="/>
-      <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
+      <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">{{ 'APP.CLOSE' | translate }}</button>
     </div>
   </form>
 </div>

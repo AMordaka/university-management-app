@@ -1,5 +1,5 @@
 <div class="modal-header">
-  <h4 class="modal-title">Assign Students</h4>
+  <h4 class="modal-title">{{ 'APP.ASSIGN_STUDENTS' | translate }}</h4>
   <button type="button" class="close" aria-label="Close" (click)="activeModal.close('Cross click')"></button>
 </div>
 <div *ngIf="undefined !== data">
@@ -15,13 +15,13 @@
             <mfDefaultSorter by="username">Index</mfDefaultSorter>
           </th>
           <th style="width: 25%">
-            <mfDefaultSorter by="surname">Surname</mfDefaultSorter>
+            <mfDefaultSorter by="surname">{{ 'APP.FIRST_NAME' | translate }}</mfDefaultSorter>
           </th>
           <th style="width: 25%">
-            <mfDefaultSorter by="name">Last Name</mfDefaultSorter>
+            <mfDefaultSorter by="name">{{ 'APP.LAST_NAME' | translate }}</mfDefaultSorter>
           </th>
           <th style="width: 20%">
-            Assign
+            {{ 'APP.ASSIGN' | translate }}
           </th>
         </tr>
         </thead>
@@ -51,8 +51,8 @@
       </table>
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-primary" (click)="onSubmit()">Assign</button>
-      <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
+      <button type="button" class="btn btn-primary" (click)="onSubmit()">{{ 'APP.ASSIGN' | translate }}</button>
+      <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">{{ 'APP.CLOSE' | translate }}</button>
     </div>
   </div>
 </div>

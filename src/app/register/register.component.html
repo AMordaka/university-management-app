@@ -6,16 +6,16 @@
           <div class="card mx-4">
             <div class="card-body p-4">
               <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-                <h1>Register</h1>
-                <p class="text-muted">Create your account</p>
+                <h1>{{ 'APP.REGISTER' | translate }}</h1>
+                <p class="text-muted">{{ 'APP.CREATE_ACCOUNT' | translate }}</p>
                 <div class="input-group mb-3">
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="fa fa-user"></i></span>
                   </div>
                   <input type="text" formControlName="name" class="form-control"
-                         [ngClass]="{ 'is-invalid': submitted && f.name.errors }" placeholder="First Name"/>
+                         [ngClass]="{ 'is-invalid': submitted && f.name.errors }" placeholder="{{ 'APP.FIRST_NAME' | translate }}"/>
                   <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
-                    <div *ngIf="f.name.errors.required">First Name is required</div>
+                    <div *ngIf="f.name.errors.required">{{ 'APP.FIRST_NAME_REQUIRED' | translate }}</div>
                   </div>
                 </div>
                 <div class="input-group mb-3">
@@ -23,9 +23,9 @@
                     <span class="input-group-text"><i class="fa fa-user-o"></i></span>
                   </div>
                   <input type="text" formControlName="surname" class="form-control"
-                         [ngClass]="{ 'is-invalid': submitted && f.surname.errors }" placeholder="Last Name"/>
+                         [ngClass]="{ 'is-invalid': submitted && f.surname.errors }" placeholder="{{ 'APP.LAST_NAME' | translate }}"/>
                   <div *ngIf="submitted && f.surname.errors" class="invalid-feedback">
-                    <div *ngIf="f.surname.errors.required">Last Name is required</div>
+                    <div *ngIf="f.surname.errors.required">{{ 'APP.LAST_NAME_REQUIRED' | translate }}</div>
                   </div>
                 </div>
                 <div class="input-group mb-3">
@@ -35,7 +35,7 @@
                   <input type="text" formControlName="username" class="form-control"
                          [ngClass]="{ 'is-invalid': submitted && f.username.errors }" placeholder="Index"/>
                   <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
-                    <div *ngIf="f.username.errors.required">Index is required</div>
+                    <div *ngIf="f.username.errors.required">{{ 'APP.INDEX_REQUIRED' | translate }}</div>
                   </div>
                 </div>
                 <div class="input-group mb-3">
@@ -45,7 +45,7 @@
                   <input type="text" formControlName="email" class="form-control"
                          [ngClass]="{ 'is-invalid': submitted && f.email.errors }" placeholder="E-Mail"/>
                   <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-                    <div *ngIf="f.email.errors.required">Email is required</div>
+                    <div *ngIf="f.email.errors.required">{{ 'APP.EMAIL_REQUIRED' | translate }}</div>
                   </div>
                 </div>
                 <div class="input-group mb-3">
@@ -53,10 +53,10 @@
                     <span class="input-group-text"><i class="fa fa-lock"></i></span>
                   </div>
                   <input type="password" formControlName="password" class="form-control"
-                         [ngClass]="{ 'is-invalid': submitted && f.password.errors }" placeholder="Password"/>
+                         [ngClass]="{ 'is-invalid': submitted && f.password.errors }" placeholder="{{ 'APP.PASSWORD' | translate }}"/>
                   <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-                    <div *ngIf="f.password.errors.required">Password is required</div>
-                    <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+                    <div *ngIf="f.password.errors.required">{{ 'APP.PASSWORD_REQUIRED' | translate }}</div>
+                    <div *ngIf="f.password.errors.minlength">{{ 'APP.PASSWORD_LENGTH' | translate }}</div>
                   </div>
                 </div>
                 <div class="input-group mb-3">
@@ -64,9 +64,9 @@
                     <span class="input-group-text"><i class="fa fa-road"></i></span>
                   </div>
                   <input type="text" formControlName="street" class="form-control"
-                         [ngClass]="{ 'is-invalid': submitted && f.street.errors }" placeholder="Street"/>
+                         [ngClass]="{ 'is-invalid': submitted && f.street.errors }" placeholder="{{ 'APP.STREET' | translate }}"/>
                   <div *ngIf="submitted && f.street.errors" class="invalid-feedback">
-                    <div *ngIf="f.street.errors.required">Street is required</div>
+                    <div *ngIf="f.street.errors.required">{{ 'APP.STREET_REQUIRED' | translate }}</div>
                   </div>
                 </div>
                 <div class="input-group mb-3">
@@ -74,9 +74,9 @@
                     <span class="input-group-text"><i class="fa fa-map"></i></span>
                   </div>
                   <input type="text" formControlName="numberStreet" class="form-control"
-                         [ngClass]="{ 'is-invalid': submitted && f.numberStreet.errors }" placeholder="Number street"/>
+                         [ngClass]="{ 'is-invalid': submitted && f.numberStreet.errors }" placeholder="{{ 'APP.NUMBER_STREET' | translate }}"/>
                   <div *ngIf="submitted && f.numberStreet.errors" class="invalid-feedback">
-                    <div *ngIf="f.numberStreet.errors.required">Number Street is required</div>
+                    <div *ngIf="f.numberStreet.errors.required">{{ 'APP.NUMBER_STREET_REQUIRED' | translate }}</div>
                   </div>
                 </div>
                 <div class="input-group mb-3">
@@ -84,9 +84,9 @@
                     <span class="input-group-text"><i class="fa fa-industry"></i></span>
                   </div>
                   <input type="text" formControlName="postalCode" class="form-control"
-                         [ngClass]="{ 'is-invalid': submitted && f.postalCode.errors }" placeholder="Postal code" pattern="[0-9]{2}\-[0-9]{3}"/>
+                         [ngClass]="{ 'is-invalid': submitted && f.postalCode.errors }" placeholder="{{ 'APP.POSTAL_CODE' | translate }}" pattern="[0-9]{2}\-[0-9]{3}"/>
                   <div *ngIf="submitted && f.postalCode.errors" class="invalid-feedback">
-                    <div *ngIf="f.postalCode.errors.required">Postal Code is required</div>
+                    <div *ngIf="f.postalCode.errors.required">{{ 'APP.POSTAL_CODE' | translate }}</div>
                   </div>
                 </div>
                 <div class="input-group mb-3">
@@ -94,16 +94,16 @@
                     <span class="input-group-text"><i class="fa fa-building"></i></span>
                   </div>
                   <input type="text" formControlName="city" class="form-control"
-                         [ngClass]="{ 'is-invalid': submitted && f.city.errors }" placeholder="City"/>
+                         [ngClass]="{ 'is-invalid': submitted && f.city.errors }" placeholder="{{ 'APP.CITY' | translate }}"/>
                   <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
-                    <div *ngIf="f.city.errors.required">City is required</div>
+                    <div *ngIf="f.city.errors.required">{{ 'APP.CITY_REQUIRED' | translate }}</div>
                   </div>
                 </div>
                 <div class="form-group">
-                  <button [disabled]="loading" class="btn btn-block btn-success">Create Account</button>
+                  <button [disabled]="loading" class="btn btn-block btn-success">{{ 'APP.CREATE_ACCOUNT' | translate }}</button>
                   <img *ngIf="loading"
                        src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="/>
-                  <a [routerLink]="['/']" class="btn btn-lg  btn-block">Cancel</a>
+                  <a [routerLink]="['/']" class="btn btn-lg  btn-block">{{ 'APP.CANCEL' | translate }}</a>
                 </div>
               </form>
             </div>

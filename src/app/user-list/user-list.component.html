@@ -1,6 +1,6 @@
-<h1>List of Users</h1>
+<h1>{{ 'APP.LIST_OF_USER' | translate }}</h1>
 <div>
-  <button class="btn-dark" (click)="openRegisterModal()">Add Teacher</button>
+  <button class="btn-dark" (click)="openRegisterModal()">{{ 'APP.ADD_TEACHER' | translate }}</button>
 </div>
 <div *ngIf="undefined !== data">
   <table class="table table-striped" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="10">
@@ -13,25 +13,25 @@
         <mfDefaultSorter by="username">Index</mfDefaultSorter>
       </th>
       <th style="width: 8%">
-        <mfDefaultSorter by="surname">Surname</mfDefaultSorter>
+        <mfDefaultSorter by="surname">{{ 'APP.FIRST_NAME' | translate }}</mfDefaultSorter>
       </th>
       <th style="width: 8%">
-        <mfDefaultSorter by="name">Last Name</mfDefaultSorter>
+        <mfDefaultSorter by="name">{{ 'APP.LAST_NAME' | translate }}</mfDefaultSorter>
       </th>
       <th style="width: 10%">
-        <mfDefaultSorter by="email">E-mail</mfDefaultSorter>
+        <mfDefaultSorter by="email">{{ 'APP.EMAIL' | translate }}</mfDefaultSorter>
       </th>
       <th style="width: 15%">
-        <mfDefaultSorter by="createdAt">Created</mfDefaultSorter>
+        <mfDefaultSorter by="createdAt">{{ 'APP.CREATED' | translate }}</mfDefaultSorter>
       </th>
       <th style="width: 15%">
-        <mfDefaultSorter by="updatedAt">Updated</mfDefaultSorter>
+        <mfDefaultSorter by="updatedAt">{{ 'APP.UPDATED' | translate }}</mfDefaultSorter>
       </th>
       <th style="width: 15%">
-        Roles
+        {{ 'APP.ROLES' | translate }}
       </th>
       <th style="width: 15%">
-        Options
+        {{ 'APP.OPTIONS' | translate }}
       </th>
     </tr>
     </thead>
@@ -48,9 +48,9 @@
       <td>{{user.updatedAt | date:'dd-MM-yyyy HH:mm'}}</td>
       <td *ngFor="let roles of user.roles">{{roles.name}}</td>
       <td>
-        <button class="btn-dark" (click)="open(user)">EDIT</button>
+        <button class="btn-dark" (click)="open(user)">{{ 'APP.EDIT_LARGE' | translate }}</button>
         <button class="btn-danger" data-toggle="modal" data-target="#exampleModal" (click)="deleteUser(user)">
-          DELETE
+          {{ 'APP.DELETE_LARGE' | translate }}
         </button>
       </td>
     </tr>

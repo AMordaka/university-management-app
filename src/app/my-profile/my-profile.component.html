@@ -29,27 +29,27 @@
                       </div>
                     </div>
                     <div class="form-group row">
-                      <label for="email" class="col-4 col-form-label">Email</label>
+                      <label for="email" class="col-4 col-form-label">{{ 'APP.EMAIL' | translate }}</label>
                       <div class="col-8">
                         <label class="col-form-label">{{model.email}}</label>
                       </div>
                     </div>
                     <div class="form-group row">
-                      <label for="street" class="col-4 col-form-label">Street</label>
+                      <label for="street" class="col-4 col-form-label">{{ 'APP.STREET' | translate }}</label>
                       <div class="col-8">
                         <input name="street" [(ngModel)]="model.street" class="form-control here" required="required"
                                type="text">
                       </div>
                     </div>
                     <div class="form-group row">
-                      <label for="numberStreet" class="col-4 col-form-label">Number Street</label>
+                      <label for="numberStreet" class="col-4 col-form-label">{{ 'APP.NUMBER_STREET' | translate }}</label>
                       <div class="col-8">
                         <input name="numberStreet" [(ngModel)]="model.numberStreet" required="required"
                                class="form-control here" type="text">
                       </div>
                     </div>
                     <div class="form-group row">
-                      <label for="postalCode" class="col-4 col-form-label">Postal Code</label>
+                      <label for="postalCode" class="col-4 col-form-label">{{ 'APP.POSTAL_CODE' | translate }}</label>
                       <div class="col-8">
                         <input name="postalCode" [(ngModel)]="model.postalCode" class="form-control here"
                                required="required" type="text">
@@ -64,10 +64,10 @@
                     </div>
                     <div class="form-group row offset-2">
                       <div>
-                        <label for="file-upload" class="custom-file-upload"> <i class="fa fa-cloud-upload"></i> Change Avatar </label>
+                        <label for="file-upload" class="custom-file-upload"> <i class="fa fa-cloud-upload"></i> {{ 'APP.CHANGE_AVATAR' | translate }} </label>
                         <input id="file-upload" type="file" (change)="fileChange($event)"/>
                       </div>
-                      <button name="submit" type="submit" class="btn-sm btn-success">Update My Profile</button>
+                      <button name="submit" type="submit" class="btn-sm btn-success">{{ 'APP.UPDATE_PROFILE' | translate }}</button>
                     </div>
                   </div>
                 </div>

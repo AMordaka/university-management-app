@@ -3,6 +3,7 @@ import { AuthenticationService } from '../../services/authentication.service';
 import { AlertService } from '../../services/alert.service';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-header',
@@ -10,13 +11,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
+  
   isAdminIn$: Observable<boolean>;
   isTeacherIn$: Observable<boolean>;
   isStudentIn$: Observable<boolean>;
   isLoggedIn$: Observable<boolean>;
 
-  constructor(private authenticationService: AuthenticationService, private alertService: AlertService, private router: Router) {
+  constructor(private authenticationService: AuthenticationService, private alertService: AlertService, private router: Router, public translate: TranslateService) {
+    translate.addLangs(['en', 'pl']);
+    translate.setDefaultLang('pl');
   }
 
   ngOnInit() {
@@ -32,4 +35,11 @@ export class HeaderComponent implements OnInit {
     this.alertService.success('Logout Successfully');
   }
 
+  changeLanguageToPolish() {
+    this.translate.use('pl');
+  }
+
+  changeLanguageToEnglish() {
+    this.translate.use('en');
+  }
 }

@@ -5,8 +5,8 @@
         <div class="col-md-6 mx-auto">
           <div class="card mx-4">
             <div class="card-body p-4">
-              <h1>Login</h1>
-              <p class="text-muted">Sign In to your account</p>
+              <h1>{{ 'APP.LOGIN' | translate }}</h1>
+              <p class="text-muted">{{ 'APP.SIGN_IN_TO_ACCOUNT' | translate }}</p>
               <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
                 <div class="input-group mb-3">
                   <div class="input-group-prepend">
@@ -15,7 +15,7 @@
                   <input type="text" formControlName="username" class="form-control"
                          [ngClass]="{ 'is-invalid': submitted && f.username.errors }" placeholder="Index"/>
                   <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
-                    <div *ngIf="f.username.errors.required">Username is required</div>
+                    <div *ngIf="f.username.errors.required">{{ 'APP.INDEX_REQUIRED' | translate }}</div>
                   </div>
                 </div>
                 <div class="input-group mb-3">
@@ -23,19 +23,19 @@
                     <span class="input-group-text"><i class="fa fa-lock"></i></span>
                   </div>
                   <input type="password" formControlName="password" class="form-control"
-                         [ngClass]="{ 'is-invalid': submitted && f.password.errors }" placeholder="Password"/>
+                         [ngClass]="{ 'is-invalid': submitted && f.password.errors }" placeholder="{{ 'APP.PASSWORD' | translate }}"/>
                   <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-                    <div *ngIf="f.password.errors.required">Password is required</div>
+                    <div *ngIf="f.password.errors.required">{{ 'APP.PASSWORD_REQUIRED' | translate }}</div>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-6">
-                    <button [disabled]="loading" class="btn btn-primary px-4">Login</button>
+                    <button [disabled]="loading" class="btn btn-primary px-4">{{ 'APP.LOGIN' | translate }}</button>
                     <img *ngIf="loading"
                          src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="/>
                   </div>
                   <div class="col-6 text-right">
-                    <a class="btn btn-link px-0">Forgot password?</a>
+                    <a class="btn btn-link px-0">{{ 'APP.FORGOT_PASSWORD' | translate }}</a>
                   </div>
                 </div>
               </form>
