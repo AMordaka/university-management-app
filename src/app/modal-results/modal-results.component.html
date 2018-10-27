@@ -1,0 +1,21 @@
+<div class="modal-header">
+  <h4 class="modal-title">{{ 'APP.INSERT_RESULTS' | translate }}</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div class="row mx-auto">
+    {{ 'APP.FILES_IN_FORMAT' | translate }}
+  </div>
+  <div class="row mx-auto">
+    <label for="file-upload" class="custom-file-upload"> <i class="fa fa-cloud-upload"></i> {{ 'APP.FILE' | translate }} </label>
+    <input id="file-upload" type="file" accept=".csv" (change)="fileChange($event)"/>
+    <div *ngIf="uploadedFile != null">
+      {{uploadedFile.name}}
+    </div>
+  </div>
+  <div class="row float-right mx-auto">
+    <label class="custom-file-upload" (click)="sendResultsToServer()">{{ 'APP.INSERT_RESULTS' | translate }}</label>
+  </div>
+</div>
