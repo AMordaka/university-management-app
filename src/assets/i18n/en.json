@@ -12,7 +12,9 @@
     "PROFILE": "Profile",
     "COURSES": "Courses",
     "LOGOUT": "Logout",
-    "USERLIST": "User List"
+    "USERLIST": "User List",
+    "API": "Api Documentation",
+    "LIST_FILES": "List of Files"
   },
   "APP": {
     "SUBJECT_NAME": "Subject name",
@@ -69,6 +71,15 @@
     "ADD_TEACHER": "Add Teacher",
     "LIST_OF_USER": "List of users",
     "ROLES": "Roles",
-    "REGISTER": "Register"
+    "REGISTER": "Register",
+    "DESCRIPTION": "Description",
+    "WHERE_WE_ARE": "WHERE WE ARE",
+    "CONTACT": "Contact",
+    "SEND_EMAIL": "Send Email",
+    "SUBJECT": "Subject",
+    "TELEPHONE": "Telephone",
+    "INSERT_RESULTS": "Insert Results",
+    "FILE" : "File",
+    "FILES_IN_FORMAT": "Accept format: PDF"
   }
 }

@@ -10,7 +10,8 @@ import {Observable} from 'rxjs';
 })
 export class UserService {
 
-  API_URL = 'https://university-management-app-back.herokuapp.com';
+  API_URL = 'http://localhost:5000';
+  //API_URL = 'https://university-management-app-back.herokuapp.com';
 
   constructor(private http: HttpClient) {
   }
@@ -55,11 +56,11 @@ export class UserService {
     return this.http.delete(`${this.API_URL}/user/` + id.toString());
   }
 
-  addAvatar(username: string, file: File) {
+  addAvatar(file: File) {
 
     const formData = new FormData();
     formData.append('file', file);
-    const req = new HttpRequest('POST', `${this.API_URL}/file/addavatar/` + username, formData, {
+    const req = new HttpRequest('POST', `${this.API_URL}/file/addavatar`, formData, {
       reportProgress: true,
       responseType: 'text'
     });
@@ -67,8 +68,8 @@ export class UserService {
     return this.http.request(req);
   }
 
-  getAvatar(username: string): Observable<any> {
-    return this.http.get(`${this.API_URL}/file/getavatar/` + username, {responseType: 'blob'});
+  getAvatar(): Observable<any> {
+    return this.http.get(`${this.API_URL}/file/getavatar`, {responseType: 'blob'});
   }
 }
 

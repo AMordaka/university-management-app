@@ -4,6 +4,7 @@ import { ItemService } from '../services/item.service';
 import { ModalGradeComponent } from '../modal-grade/modal-grade.component';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalPickerComponent } from '../modal-picker/modal-picker.component';
+import { ModalResultsComponent } from '../modal-results/modal-results.component';
 
 @Component({
   selector: 'app-item-profile',
@@ -39,6 +40,7 @@ export class ItemProfileComponent implements OnInit {
     modalRef.componentInstance.courseId = courseId;
     modalRef.result.then((result) => {
       location.reload();
+    }).catch(error => {
     });
   }
 
@@ -47,6 +49,15 @@ export class ItemProfileComponent implements OnInit {
     modalRef.componentInstance.courseName = courseName;
     modalRef.result.then((result) => {
       location.reload();
+    }).catch(error => {
+    });
+  }
+
+  openModalInsertResults(courseName: string) {
+    const modalRef = this.modalService.open(ModalResultsComponent);
+    modalRef.componentInstance.courseName = courseName;
+    modalRef.result.then((result) => {
+    }).catch(error => {
     });
   }
 }

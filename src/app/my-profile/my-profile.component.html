@@ -19,7 +19,7 @@
                   </div>
                 </div>
               </div>
-              <form (ngSubmit)="update()">
+              <form>
                 <div class="row">
                   <div class="col-md-12">
                     <div class="form-group row">
@@ -67,7 +67,7 @@
                         <label for="file-upload" class="custom-file-upload"> <i class="fa fa-cloud-upload"></i> {{ 'APP.CHANGE_AVATAR' | translate }} </label>
                         <input id="file-upload" type="file" (change)="fileChange($event)"/>
                       </div>
-                      <button name="submit" type="submit" class="btn-sm btn-success">{{ 'APP.UPDATE_PROFILE' | translate }}</button>
+                      <label class="custom-file-upload" (click)="update()"> {{ 'APP.UPDATE_PROFILE' | translate }}</label>
                     </div>
                   </div>
                 </div>

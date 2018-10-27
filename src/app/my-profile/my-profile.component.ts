@@ -48,12 +48,12 @@ export class MyProfileComponent implements OnInit {
   }
 
   updateAvatar() {
-    this.userService.addAvatar(this.authenticationService.getUsername(), this.uploadedFile).subscribe();
+    this.userService.addAvatar(this.uploadedFile).subscribe();
     location.reload();
   }
 
   getAvatar() {
-    this.userService.getAvatar(this.authenticationService.getUsername()).subscribe(data => {
+    this.userService.getAvatar().subscribe(data => {
       this.createImageFromBlob(data);
     }, error => {
       console.log(error);

@@ -1,6 +1,7 @@
 <div *ngIf="undefined !== data">
   <h3>{{courseName}}</h3>
   <button class="btn-info" (click)="this.openModalPicker(courseName)">{{ 'APP.ASSIGN_STUDENT' | translate }}</button>
+  <button class="btn-info" (click)="this.openModalInsertResults(courseName)">{{ 'APP.INSERT_RESULTS' | translate }}</button>
   <table class="table table-striped" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="10">
     <thead>
     <tr>

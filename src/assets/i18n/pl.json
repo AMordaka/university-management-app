@@ -12,7 +12,9 @@
     "PROFILE": "Profil",
     "COURSES": "Przedmioty",
     "LOGOUT": "Wyloguj",
-    "USERLIST": "Lista Użytkowników"
+    "USERLIST": "Lista Użytkowników",
+    "API": "Dokumentacja API",
+    "LIST_FILES": "Lista plików"
   },
   "APP": {
     "SUBJECT_NAME": "Nazwa przedmiotu",
@@ -69,6 +71,15 @@
     "ADD_TEACHER": "Dodaj wykladowcę",
     "LIST_OF_USER": "Lista użytkowników",
     "ROLES": "Role",
-    "REGISTER": "Zarejestruj"
+    "REGISTER": "Zarejestruj",
+    "DESCRIPTION": "Treść wiadomości",
+    "WHERE_WE_ARE": "GDZIE JESTEŚMY",
+    "CONTACT": "Kontakt",
+    "SEND_EMAIL": "Wyślij wiadomość",
+    "SUBJECT": "Temat",
+    "TELEPHONE": "Telefon",
+    "INSERT_RESULTS": "Wstaw wyniki",
+    "FILE" : "Plik",
+    "FILES_IN_FORMAT": "Akceptowany format: PDF"
   }
 }

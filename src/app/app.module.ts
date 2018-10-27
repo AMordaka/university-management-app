@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
 import { DataTableModule } from 'angular-6-datatable';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,6 +28,8 @@ import { ModalPickerComponent } from './modal-picker/modal-picker.component';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { SharedModule } from './shared.module';
+import { ModalResultsComponent } from './modal-results/modal-results.component';
+import { TokenInterceptorService } from './services/token-interceptor.service';
 
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -52,9 +54,10 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     ModalItemComponent,
     ModalGradeComponent,
     ItemProfileComponent,
-    ModalPickerComponent
+    ModalPickerComponent,
+    ModalResultsComponent
   ],
-  entryComponents: [ModalComponent, ModalRegisterComponent, ModalItemComponent, ModalGradeComponent, ModalPickerComponent],
+  entryComponents: [ModalComponent, ModalRegisterComponent, ModalItemComponent, ModalGradeComponent, ModalPickerComponent, ModalResultsComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -73,7 +76,12 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
       }
     }),
   ],
-  providers: [AuthGuard, AdminGuard],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: TokenInterceptorService,
+    multi: true
+  },
+    AuthGuard, AdminGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {
