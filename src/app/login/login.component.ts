@@ -54,7 +54,7 @@ export class LoginComponent implements OnInit {
           this.alertService.success('Welcome: ' + data.name + ' ' + data.surname);
         },
         error => {
-          this.alertService.error(error.statusText);
+          this.alertService.error(error.error.error);
           this.loading = false;
         });
   }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ItemService } from '../services/item.service';
 import { ModalGradeComponent } from '../modal-grade/modal-grade.component';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -16,7 +16,7 @@ export class ItemProfileComponent implements OnInit {
   data: any;
   courseName: string;
 
-  constructor(private route: ActivatedRoute, private itemService: ItemService, private modalService: NgbModal) {
+  constructor(private route: ActivatedRoute, private itemService: ItemService, private modalService: NgbModal, private router: Router) {
   }
 
   ngOnInit() {
@@ -57,7 +57,10 @@ export class ItemProfileComponent implements OnInit {
     const modalRef = this.modalService.open(ModalResultsComponent);
     modalRef.componentInstance.courseName = courseName;
     modalRef.result.then((result) => {
+      location.reload();
     }).catch(error => {
     });
+
+
   }
 }

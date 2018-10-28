@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpRequest } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpRequest } from '@angular/common/http';
 import { CourseInfo } from '../models/courseInfo';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -39,5 +40,18 @@ export class ItemService {
     });
 
     return this.http.request(req);
+  }
+
+  getAllPdfs() {
+    return this.http.get<any[]>(`${this.API_URL}/file/all`).pipe(map(data => data));
+  }
+
+  getPdf(id: string) {
+    const headers = new HttpHeaders().set('content-type', 'multipart/form-data');
+    return this.http.get(`${this.API_URL}/file/pdf/` + id, {headers: headers, responseType: 'blob'});
+  }
+
+  deleteItem(id: number) {
+    return this.http.delete(`${this.API_URL}/file/pdf/` + id);
   }
 }

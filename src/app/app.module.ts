@@ -30,6 +30,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { SharedModule } from './shared.module';
 import { ModalResultsComponent } from './modal-results/modal-results.component';
 import { TokenInterceptorService } from './services/token-interceptor.service';
+import { FileListComponent } from './file-list/file-list.component';
 
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -55,7 +56,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     ModalGradeComponent,
     ItemProfileComponent,
     ModalPickerComponent,
-    ModalResultsComponent
+    ModalResultsComponent,
+    FileListComponent
   ],
   entryComponents: [ModalComponent, ModalRegisterComponent, ModalItemComponent, ModalGradeComponent, ModalPickerComponent, ModalResultsComponent],
   imports: [

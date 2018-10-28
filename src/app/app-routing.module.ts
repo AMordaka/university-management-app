@@ -12,6 +12,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { AdminGuard } from './guards/admin.guard';
 import { MyProfileComponent } from './my-profile/my-profile.component';
 import { ItemProfileComponent } from './item-profile/item-profile.component';
+import { FileListComponent } from './file-list/file-list.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -24,6 +25,7 @@ const routes: Routes = [
   {path: 'myprofile', component: MyProfileComponent, canActivate: [AuthGuard]},
   {path: 'about', component: AboutComponent},
   {path: 'contact', component: ContactComponent},
+  {path: 'file-list', component: FileListComponent},
 
   // otherwise redirect to home
   {path: '**', redirectTo: ''}

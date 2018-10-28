@@ -80,6 +80,10 @@
     "TELEPHONE": "Telefon",
     "INSERT_RESULTS": "Wstaw wyniki",
     "FILE" : "Plik",
-    "FILES_IN_FORMAT": "Akceptowany format: PDF"
+    "FILES_IN_FORMAT": "Akceptowany format: PDF",
+    "LIST_OF_FILES" : "Lista plików",
+    "DOWNLOAD" : "Pobierz",
+    "FILE_NAME" : "Nazwa pliku",
+    "DISPLAY" : "POKAŻ"
   }
 }

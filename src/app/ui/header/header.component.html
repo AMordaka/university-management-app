@@ -36,7 +36,7 @@
               <div *ngIf="isAdminIn$ | async">
                 <a class="dropdown-item" href="/user-list">{{ 'HEADER.USERLIST' | translate }}</a>
                 <a class="dropdown-item" href="http://localhost:5000/docs">{{ 'HEADER.API' | translate }}</a>
-                <a class="dropdown-item" href="/">{{ 'HEADER.LIST_FILES' | translate }}</a>
+                <a class="dropdown-item" href="/file-list">{{ 'HEADER.LIST_FILES' | translate }}</a>
               </div>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" id="custom_button" (click)="onLogout()">{{ 'HEADER.LOGOUT' | translate }}</a>
