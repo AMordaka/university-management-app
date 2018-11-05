@@ -84,6 +84,8 @@
     "LIST_OF_FILES" : "List of Files",
     "DOWNLOAD" : "Download",
     "FILE_NAME" : "File name",
-    "DISPLAY" : "DISPLAY"
+    "DISPLAY" : "DISPLAY",
+    "DATABASE" : "Database",
+    "HEALTH" : "Health & Statistics"
   }
 }

@@ -84,6 +84,8 @@
     "LIST_OF_FILES" : "Lista plików",
     "DOWNLOAD" : "Pobierz",
     "FILE_NAME" : "Nazwa pliku",
-    "DISPLAY" : "POKAŻ"
+    "DISPLAY" : "POKAŻ",
+    "DATABASE" : "Baza Danych",
+    "HEALTH" : "Statystyki"
   }
 }
