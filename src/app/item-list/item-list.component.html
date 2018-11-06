@@ -1,6 +1,6 @@
 <div *ngIf="undefined !== data">
   <div *ngIf="isTeacher">
-    <button class="btn-info" (click)="openModalAddCourse()">{{ 'APP.ADD_NEW_COURSE' | translate }}</button>
+    <a class="btn btn-lg btn-info text-white" (click)="openModalAddCourse()"><span class="fa fa-plus"></span> {{ 'APP.ADD_NEW_COURSE' | translate }}</a>
   </div>
   <table class="table table-striped" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="10">
     <thead>

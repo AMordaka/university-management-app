@@ -1,7 +1,7 @@
 <div *ngIf="undefined !== data">
   <h3>{{courseName}}</h3>
-  <button class="btn-info" (click)="this.openModalPicker(courseName)">{{ 'APP.ASSIGN_STUDENT' | translate }}</button>
-  <button class="btn-info" (click)="this.openModalInsertResults(courseName)">{{ 'APP.INSERT_RESULTS' | translate }}</button>
+  <a class="btn btn-lg btn-info text-white" (click)="this.openModalPicker(courseName)"><span class="fa fa-plus"></span> {{ 'APP.ASSIGN_STUDENT' | translate }}</a>
+  <a class="btn btn-lg btn-warning text-white" (click)="this.openModalInsertResults(courseName)"><span class="fa fa-bookmark"></span> {{ 'APP.INSERT_RESULTS' | translate }}</a>
   <table class="table table-striped" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="10">
     <thead>
     <tr>
