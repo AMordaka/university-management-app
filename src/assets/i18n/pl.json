@@ -80,12 +80,15 @@
     "TELEPHONE": "Telefon",
     "INSERT_RESULTS": "Wstaw wyniki",
     "FILE" : "Plik",
-    "FILES_IN_FORMAT": "Akceptowany format: PDF",
+    "FILES_IN_FORMAT": "Akceptowany format: CSV",
     "LIST_OF_FILES" : "Lista plików",
     "DOWNLOAD" : "Pobierz",
     "FILE_NAME" : "Nazwa pliku",
     "DISPLAY" : "POKAŻ",
     "DATABASE" : "Baza Danych",
-    "HEALTH" : "Statystyki"
+    "HEALTH" : "Statystyki",
+    "LOGOUT_SUCCESS" : "Wylogowano pomyślnie",
+    "WELCOME" : "Witaj",
+    "UPDATED_SUCCESS": "Zaaktualizowano pomyślnie"
   }
 }
