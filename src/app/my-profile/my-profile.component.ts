@@ -4,6 +4,7 @@ import {AuthenticationService} from '../services/authentication.service';
 import {AlertService} from '../services/alert.service';
 import {DomSanitizer} from '@angular/platform-browser';
 import {Observable} from 'rxjs';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-my-profile',
@@ -16,7 +17,7 @@ export class MyProfileComponent implements OnInit {
   imageToShow: Observable<string>;
   uploadedFile: File;
 
-  constructor(private userService: UserService, private authenticationService: AuthenticationService, private alertService: AlertService, public _d: DomSanitizer) {
+  constructor(private userService: UserService, private authenticationService: AuthenticationService, private alertService: AlertService, public translate: TranslateService) {
   }
 
   ngOnInit() {
@@ -35,7 +36,7 @@ export class MyProfileComponent implements OnInit {
   update() {
     this.userService.update(this.model).subscribe(
       data => {
-        this.alertService.success('Updated successful', true);
+        this.alertService.success(this.translate.instant('APP.UPDATED_SUCCESS'), true);
       },
       error => {
         this.alertService.error(error.error.message);

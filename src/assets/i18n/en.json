@@ -86,6 +86,9 @@
     "FILE_NAME" : "File name",
     "DISPLAY" : "DISPLAY",
     "DATABASE" : "Database",
-    "HEALTH" : "Health & Statistics"
+    "HEALTH" : "Health & Statistics",
+    "LOGOUT_SUCCESS" : "Logout successfully",
+    "WELCOME" : "Welcome",
+    "UPDATED_SUCCESS": "Updated successfully"
   }
 }

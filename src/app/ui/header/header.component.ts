@@ -11,7 +11,7 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  
+
   isAdminIn$: Observable<boolean>;
   isTeacherIn$: Observable<boolean>;
   isStudentIn$: Observable<boolean>;
@@ -32,7 +32,7 @@ export class HeaderComponent implements OnInit {
   onLogout() {
     this.authenticationService.logout();
     this.router.navigate(['/home']);
-    this.alertService.success('Logout Successfully');
+    this.alertService.success(this.translate.instant('APP.LOGOUT_SUCCESS'));
   }
 
   changeLanguageToPolish() {

@@ -1,3 +1,16 @@
-<p>
-  {{ 'HEADER.HOME' | translate }}
-</p>
+<div *ngIf="isLoggedIn$ | async">
+  <div *ngIf="isDataLoaded$ | async">
+    <div class="mt-4">
+      <div style="display: block">
+        <canvas baseChart
+                [datasets]="barChartData"
+                [labels]="barChartLabels"
+                [options]="barChartOptions"
+                [legend]="barChartLegend"
+                [chartType]="barChartType"
+                (chartHover)="chartHovered($event)"
+                (chartClick)="chartClicked($event)"></canvas>
+      </div>
+    </div>
+  </div>
+</div>

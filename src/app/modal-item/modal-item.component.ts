@@ -36,7 +36,7 @@ export class ModalItemComponent implements OnInit {
     }
     this.itemService.createCourse(this.authenticationService.getUsername(), this.courseForm.value.courseName).subscribe(
     data => {
-      this.alertService.success('Added course successful', true);
+      this.alertService.success('Dodano przedmiot pomyślnie', true);
     },
     error => {
       console.log(error);

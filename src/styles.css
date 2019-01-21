@@ -1,1 +1,9 @@
 @import '~font-awesome/css/font-awesome.css';
+body {
+  background: url(/src/assets/university.png) no-repeat fixed center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  opacity: .95;
+}

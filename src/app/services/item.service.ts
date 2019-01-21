@@ -53,5 +53,5 @@ export class ItemService {
 
   deleteItem(id: number) {
     return this.http.delete(`${this.API_URL}/file/pdf/` + id);
-  }
+  }żą
 }

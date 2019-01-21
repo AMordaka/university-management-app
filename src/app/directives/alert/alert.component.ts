@@ -12,7 +12,7 @@ export class AlertComponent implements OnInit, OnDestroy {
   private subscription: Subscription;
   message: any;
 
-  constructor(private alertService: AlertService) {
+  constructor(private alertService: AlertService, ) {
   }
 
   ngOnInit() {

@@ -3,34 +3,34 @@
   <button class="btn-dark" (click)="openRegisterModal()">{{ 'APP.ADD_TEACHER' | translate }}</button>
 </div>
 <div *ngIf="undefined !== data">
-  <table class="table table-striped" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="10">
+  <table class="table table-striped" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="8">
     <thead>
     <tr>
-      <th style="width: 2%">
+      <th style="width: 1%">
         <mfDefaultSorter by="id">ID</mfDefaultSorter>
       </th>
-      <th style="width: 8%">
+      <th style="width: 4%">
         <mfDefaultSorter by="username">Index</mfDefaultSorter>
       </th>
-      <th style="width: 8%">
+      <th style="width: 6%">
         <mfDefaultSorter by="surname">{{ 'APP.FIRST_NAME' | translate }}</mfDefaultSorter>
       </th>
-      <th style="width: 8%">
+      <th style="width: 7%">
         <mfDefaultSorter by="name">{{ 'APP.LAST_NAME' | translate }}</mfDefaultSorter>
       </th>
-      <th style="width: 10%">
+      <th style="width: 9%">
         <mfDefaultSorter by="email">{{ 'APP.EMAIL' | translate }}</mfDefaultSorter>
       </th>
-      <th style="width: 15%">
+      <th style="width: 20%">
         <mfDefaultSorter by="createdAt">{{ 'APP.CREATED' | translate }}</mfDefaultSorter>
       </th>
-      <th style="width: 15%">
+      <th style="width: 16%">
         <mfDefaultSorter by="updatedAt">{{ 'APP.UPDATED' | translate }}</mfDefaultSorter>
       </th>
-      <th style="width: 15%">
+      <th style="width: 10%">
         {{ 'APP.ROLES' | translate }}
       </th>
-      <th style="width: 15%">
+      <th style="width: 22%">
         {{ 'APP.OPTIONS' | translate }}
       </th>
     </tr>

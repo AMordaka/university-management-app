@@ -1,9 +1,9 @@
-import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders, HttpRequest} from '@angular/common/http';
-import {map} from 'rxjs/operators';
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders, HttpRequest } from '@angular/common/http';
+import { map } from 'rxjs/operators';
 
-import {User} from '../models/user';
-import {Observable} from 'rxjs';
+import { User } from '../models/user';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +11,7 @@ import {Observable} from 'rxjs';
 export class UserService {
 
   API_URL = 'http://localhost:5000';
+
   //API_URL = 'https://university-management-app-back.herokuapp.com';
 
   constructor(private http: HttpClient) {
@@ -38,6 +39,14 @@ export class UserService {
 
   getStudentItems(username: string) {
     return this.http.get(`${this.API_URL}/student/` + username + `/items`);
+  }
+
+  getStudentItemsGrades(username: string) {
+    return this.http.get<number[]>(`${this.API_URL}/student/` + username + `/itemsgrade`);
+  }
+
+  getTeacherItemsGrades(username: string) {
+    return this.http.get(`${this.API_URL}/teacher/` + username + `/itemsgrade`);
   }
 
   getTeacherItems(username: string) {
